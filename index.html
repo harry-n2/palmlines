@@ -1,0 +1,1909 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ヨガで整え、手相で「時」を知る｜流年法で人生の転機を精密算出</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700;900&family=Shippori+Mincho:wght@400;500;600;700;800&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+      color: #F0F4F8;
+      background: #0B1021;
+      line-height: 2.0;
+      overflow-x: hidden;
+      font-weight: 500;
+    }
+
+    :root {
+      --white: #FFFFFF;
+      --navy: #0B1021;
+      /* Deep Cosmic Navy */
+      --purple: #2D1B4E;
+      /* Cosmic Purple */
+      --gold: #FFD700;
+      /* Pure Glowing Gold */
+      --gold-light: #FFE082;
+      --gold-glow: rgba(255, 215, 0, 0.6);
+      --accent-pink: #FF6B8B;
+      /* Mouse Charm Accent */
+      --text-main: #F0F4F8;
+      --text-dark: #1A202C;
+      --glass-bg: rgba(255, 255, 255, 0.08);
+      --glass-border: rgba(255, 255, 255, 0.15);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    .section-padding {
+      padding: 140px 0;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .maru {
+      font-family: 'Zen Maru Gothic', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    .fv-label,
+    .cta-primary {
+      font-family: 'Zen Maru Gothic', sans-serif;
+    }
+
+    /* ===== PARTICLES CANVAS ===== */
+    #particles-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ===== SCROLL REVEAL ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-60px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(60px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.85);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal-scale.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* ===== MOUSE SPEECH ===== */
+    .mouse-speech {
+      font-family: 'Zen Maru Gothic', sans-serif;
+      background: var(--white);
+      border: 2px solid var(--gold);
+      border-radius: 20px;
+      padding: 14px 20px;
+      position: relative;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--navy);
+      box-shadow: 0 4px 20px rgba(201, 168, 76, 0.15);
+      max-width: 340px;
+    }
+
+    .mouse-speech::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 30px;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-top: 12px solid var(--gold);
+    }
+
+    .mouse-speech.speech-bottom::after {
+      bottom: auto;
+      top: -12px;
+      border-top: none;
+      border-bottom: 12px solid var(--gold);
+    }
+
+    /* ===== SECTION 1: FIRST VIEW (COSMIC HERO) ===== */
+    .fv {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at 60% 40%, #2D1B4E 0%, #0B1021 70%);
+      color: var(--white);
+    }
+
+    .fv::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .fv::before {
+      content: '';
+      position: absolute;
+      top: -150px;
+      right: -150px;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(255, 215, 0, 0.2) 0%, transparent 60%);
+      filter: blur(80px);
+      animation: cosmicPulse 8s ease-in-out infinite;
+      z-index: 0;
+    }
+
+    @keyframes cosmicPulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 0.5;
+      }
+
+      50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+      }
+    }
+
+    .fv-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 56px;
+      align-items: center;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+      padding: 60px 0;
+    }
+
+    .fv-image-area {
+      position: relative;
+      text-align: center;
+    }
+
+    .fv-real-photo {
+      width: 100%;
+      max-width: 380px;
+      border-radius: 24px;
+      box-shadow: 0 0 60px rgba(255, 215, 0, 0.2);
+      object-fit: contain;
+      border: 2px solid var(--gold-glow);
+      animation: photoFloat 6s ease-in-out infinite;
+    }
+
+    @keyframes photoFloat {
+
+      0%,
+      100% {
+        transform: translateY(0);
+        box-shadow: 0 0 60px rgba(255, 215, 0, 0.2);
+      }
+
+      50% {
+        transform: translateY(-15px);
+        box-shadow: 0 0 90px rgba(255, 215, 0, 0.4);
+      }
+    }
+
+    .fv-mouse {
+      position: absolute;
+      bottom: -20px;
+      right: 0%;
+      width: 130px;
+      animation: popInMouse 0.8s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.5s both;
+      filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.6));
+      z-index: 5;
+    }
+
+    @keyframes popInMouse {
+      from {
+        transform: translateY(100%) scale(0.5);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+    }
+
+    .fv-mouse-speech {
+      position: absolute;
+      bottom: 95px;
+      right: -20px;
+      font-family: 'Zen Maru Gothic', sans-serif;
+      background: var(--white);
+      border: 3px solid var(--gold);
+      border-radius: 24px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--navy);
+      white-space: nowrap;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      animation: speechPop 0.6s ease 1.2s both;
+      z-index: 6;
+    }
+
+    @keyframes speechPop {
+      from {
+        transform: scale(0) rotate(-10deg);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1) rotate(0);
+        opacity: 1;
+      }
+    }
+
+    .fv-mouse-speech::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 20px;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 8px solid var(--gold);
+    }
+
+    .fv-copy {
+      position: relative;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .fv-copy .fv-label {
+      display: inline-block;
+      font-size: 1.1rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 8px 28px;
+      border-radius: 50px;
+      margin-bottom: 32px;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      backdrop-filter: blur(8px);
+      animation: labelSlide 0.8s ease 0.3s both;
+    }
+
+    @keyframes labelSlide {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .fv-copy h1 {
+      font-size: 4.2rem;
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 32px;
+      letter-spacing: 0.05em;
+      animation: headlineReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s both;
+    }
+
+    @keyframes headlineReveal {
+      from {
+        transform: translateY(50px) scale(0.95);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+    }
+
+    .fv-copy h1 .gold {
+      color: var(--gold);
+      text-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+      background: none;
+      -webkit-text-fill-color: initial;
+    }
+
+    .fv-copy .sub-copy {
+      font-size: 1.35rem;
+      color: rgba(255, 255, 255, 0.95);
+      margin-bottom: 48px;
+      line-height: 2.2;
+      font-weight: 500;
+      animation: headlineReveal 1s ease 0.7s both;
+    }
+
+    .fv-copy .sub-copy .gold {
+      color: var(--gold);
+      font-weight: 700;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .cta-primary {
+      display: inline-block;
+      background: linear-gradient(135deg, #FFD700, #FDB931);
+      color: #0B1021;
+      font-size: 1.4rem;
+      font-weight: 900;
+      padding: 24px 64px;
+      border-radius: 100px;
+      text-decoration: none;
+      box-shadow: 0 10px 40px rgba(255, 215, 0, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.4);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      letter-spacing: 0.05em;
+      animation: ctaPulse 2.5s ease-in-out infinite, headlineReveal 1s ease 0.9s both;
+      position: relative;
+      overflow: hidden;
+      border: 2px solid #FFF;
+    }
+
+    .cta-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+      transition: 0.5s;
+    }
+
+    .cta-primary:hover::before {
+      left: 100%;
+      transition: 0.5s;
+    }
+
+    .cta-primary:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 20px 50px rgba(255, 215, 0, 0.6);
+    }
+
+    .cta-primary .cta-free {
+      font-size: 0.9rem;
+      display: block;
+      margin-bottom: 2px;
+      opacity: 1;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      color: var(--navy);
+    }
+
+    @keyframes ctaPulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.03);
+      }
+    }
+
+    .fv-scroll-hint {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      text-align: center;
+      animation: scrollBounce 2s ease-in-out infinite;
+    }
+
+    .fv-scroll-hint span {
+      display: block;
+      font-size: 0.7rem;
+      color: rgba(255, 255, 255, 0.4);
+      letter-spacing: 0.15em;
+      margin-bottom: 8px;
+    }
+
+    .fv-scroll-hint .arrow {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-right: 2px solid rgba(201, 168, 76, 0.5);
+      border-bottom: 2px solid rgba(201, 168, 76, 0.5);
+      transform: rotate(45deg);
+      margin: 0 auto;
+    }
+
+    @keyframes scrollBounce {
+
+      0%,
+      100% {
+        transform: translateX(-50%) translateY(0);
+      }
+
+      50% {
+        transform: translateX(-50%) translateY(8px);
+      }
+    }
+
+    /* ===== SECTION 2: PROBLEM (Cosmic Dark) ===== */
+    .s2-problem {
+      background: #0F1629;
+      /* Darker than navy */
+      position: relative;
+      z-index: 1;
+    }
+
+    .s2-header {
+      margin-bottom: 64px;
+    }
+
+    .s2-header h2 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      margin-bottom: 16px;
+      line-height: 1.4;
+      color: var(--white);
+    }
+
+    .s2-header h2 .gold {
+      color: var(--gold);
+      text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+    }
+
+    .s2-header .s2-sub {
+      font-size: 1.1rem;
+      color: #A0AEC0;
+      font-family: 'Shippori Mincho', serif;
+    }
+
+    .s2-content {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .s2-mouse-area {
+      position: relative;
+    }
+
+    .s2-mouse-img {
+      width: 150px;
+      animation: floatMouse 3s ease-in-out infinite;
+      filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.1));
+    }
+
+    .worry-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .worry-list li {
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--glass-border);
+      padding: 32px 36px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      border-left: 6px solid var(--gold);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .worry-list li:hover {
+      transform: translateX(10px);
+      background: rgba(255, 255, 255, 0.08);
+      /* Slightly lighter on hover */
+      box-shadow: 0 15px 40px rgba(255, 215, 0, 0.1);
+    }
+
+    .worry-icon {
+      flex-shrink: 0;
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, var(--navy), #2A4070);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .worry-text h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--white);
+    }
+
+    .worry-text p {
+      font-size: 1rem;
+      color: #CBD5E0;
+    }
+
+    .s2-declaration {
+      margin-top: 64px;
+      background: linear-gradient(135deg, #1A202C, #2D3748);
+      border: 2px solid var(--gold);
+      color: var(--white);
+      padding: 48px 56px;
+      border-radius: 24px;
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 1.8;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .s2-declaration::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+
+    .s2-declaration .gold {
+      color: var(--gold);
+      font-size: 1.8rem;
+    }
+
+    /* ===== SECTION 3: APP (Starry Sky) ===== */
+    .s3-app {
+      background: #0B1021;
+      position: relative;
+      z-index: 1;
+    }
+
+    .s3-app::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: radial-gradient(white 1px, transparent 1px), radial-gradient(white 1px, transparent 1px);
+      background-size: 50px 50px, 100px 100px;
+      background-position: 0 0, 25px 25px;
+      opacity: 0.1;
+      animation: starryMove 60s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes starryMove {
+      from {
+        background-position: 0 0, 25px 25px;
+      }
+
+      to {
+        background-position: 100px 100px, 125px 125px;
+      }
+    }
+
+    .s3-header {
+      margin-bottom: 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .s3-header h2 {
+      font-size: 2.5rem;
+      color: var(--white);
+    }
+
+    .s3-header h2 .gold {
+      color: var(--gold);
+      text-shadow: 0 0 10px var(--gold);
+    }
+
+    .s3-header .s3-sub {
+      color: #A0AEC0;
+      font-size: 1.1rem;
+      margin-top: 10px;
+    }
+
+    .app-card {
+      position: relative;
+      z-index: 1;
+      border: 1px solid var(--gold);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 0 50px rgba(255, 215, 0, 0.15);
+      background: #111;
+    }
+
+    .app-card-header {
+      background: linear-gradient(135deg, var(--navy), #263D6A);
+      color: var(--white);
+      padding: 28px 36px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .app-card-header .app-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--gold);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+    }
+
+    .app-card-header h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .app-card-header p {
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+
+    .app-iframe-wrap {
+      width: 100%;
+      min-height: 600px;
+      position: relative;
+    }
+
+    .app-iframe-wrap iframe {
+      width: 100%;
+      height: 700px;
+      border: none;
+    }
+
+    .evidence-area {
+      position: relative;
+      z-index: 1;
+      margin-top: 56px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .evidence-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 36px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+      transition: transform 0.3s, box-shadow 0.3s;
+      color: var(--white);
+    }
+
+    .evidence-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 36px rgba(201, 168, 76, 0.12);
+    }
+
+    .evidence-card h4 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .evidence-card p {
+      font-size: 0.92rem;
+      color: #CBD5E0;
+      line-height: 1.9;
+    }
+
+    .evidence-img {
+      width: 100%;
+      border-radius: 14px;
+      margin-top: 20px;
+      background: linear-gradient(135deg, var(--navy), #2A4070);
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .evidence-img .grid-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        linear-gradient(rgba(201, 168, 76, 0.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201, 168, 76, 0.2) 1px, transparent 1px);
+      background-size: 30px 30px;
+      animation: gridPulse 4s ease-in-out infinite;
+    }
+
+    @keyframes gridPulse {
+
+      0%,
+      100% {
+        opacity: 0.4;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    .evidence-img .palm-text {
+      color: var(--white);
+      font-size: 0.88rem;
+      z-index: 1;
+      text-align: center;
+      padding: 16px;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+    }
+
+    .evidence-img .palm-text .big {
+      font-size: 2.2rem;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    /* ===== SECTION 4, 5, 6: RESULT, PROFILE, FAQ (Consolidated Cosmic) ===== */
+    .s4-result,
+    .s5-profile,
+    .s6-faq {
+      background: #0F1629;
+      position: relative;
+      z-index: 1;
+    }
+
+    .result-card {
+      max-width: 720px;
+      margin: 0 auto 56px;
+      background: #1A202C;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--gold);
+    }
+
+    .result-card-header {
+      background: linear-gradient(135deg, var(--navy), #263D6A);
+      color: var(--white);
+      padding: 22px 32px;
+      font-size: 1.08rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .result-preview {
+      padding: 36px;
+    }
+
+    .result-text {
+      font-size: 1.15rem;
+      line-height: 2;
+      margin-bottom: 20px;
+      color: #E2E8F0;
+    }
+
+    .result-text .highlight {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    .result-blurred {
+      position: relative;
+      background: linear-gradient(135deg, #f8f4ec, #eee8d8);
+      border-radius: 16px;
+      padding: 32px;
+      margin-top: 16px;
+      overflow: hidden;
+    }
+
+    .result-blurred .blur-content {
+      filter: blur(6px);
+      user-select: none;
+      font-size: 0.95rem;
+      line-height: 2.2;
+      color: var(--navy);
+    }
+
+    .result-blurred .lock-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(245, 240, 232, 0.65);
+      backdrop-filter: blur(2px);
+    }
+
+    .result-blurred .lock-icon {
+      font-size: 3rem;
+      margin-bottom: 12px;
+      animation: lockPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes lockPulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.1);
+      }
+    }
+
+    .result-blurred .lock-text {
+      font-size: 0.95rem;
+      color: var(--navy);
+      font-weight: 600;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    .line-cta-area {
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+
+    .line-cta-area .mouse-pointing {
+      width: 120px;
+      margin-bottom: 16px;
+      animation: pointBounce 2s ease-in-out infinite;
+      filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.12));
+    }
+
+    @keyframes pointBounce {
+
+      0%,
+      100% {
+        transform: translateX(0) rotate(-3deg);
+      }
+
+      50% {
+        transform: translateX(10px) rotate(3deg);
+      }
+    }
+
+    .line-premium-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: linear-gradient(135deg, #06C755, #00B900);
+      color: var(--white);
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 24px 52px;
+      border-radius: 60px;
+      text-decoration: none;
+      box-shadow: 0 10px 40px rgba(6, 199, 85, 0.5);
+      transition: all 0.4s;
+      letter-spacing: 0.04em;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .line-premium-btn::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.2) 50%, transparent 70%);
+      animation: shimmer 3s ease-in-out infinite;
+    }
+
+    .line-premium-btn:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 16px 48px rgba(6, 199, 85, 0.45);
+    }
+
+    .line-premium-btn .line-icon-svg {
+      width: 30px;
+      height: 30px;
+    }
+
+    .line-qr-area {
+      margin-top: 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .line-qr-area img {
+      width: 150px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .line-qr-area img:hover {
+      transform: scale(1.05);
+    }
+
+    .line-qr-area p {
+      font-size: 0.82rem;
+      color: #888;
+    }
+
+    .premium-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold), #D4B85A);
+      color: var(--white);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 6px 18px;
+      border-radius: 20px;
+      margin-top: 20px;
+      letter-spacing: 0.1em;
+    }
+
+    /* ===== SECTION 5: PROFILE ===== */
+    .s5-profile::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23C9A84C' stroke-opacity='0.04' stroke-width='1'%3E%3Ccircle cx='40' cy='40' r='30'/%3E%3Ccircle cx='40' cy='40' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 64px;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-photo-area {
+      position: relative;
+    }
+
+    .profile-photo {
+      width: 100%;
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(27, 42, 74, 0.15);
+      object-fit: contain;
+      border: 3px solid rgba(201, 168, 76, 0.2);
+      transition: box-shadow 0.4s;
+    }
+
+    .profile-photo:hover {
+      box-shadow: 0 24px 72px rgba(27, 42, 74, 0.2), 0 0 30px rgba(201, 168, 76, 0.1);
+    }
+
+    .profile-mouse {
+      position: absolute;
+      bottom: -16px;
+      right: -16px;
+      width: 95px;
+      animation: floatMouse 3s ease-in-out infinite;
+      filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.12));
+    }
+
+    .profile-content h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--white);
+    }
+
+    .profile-content h2 .gold-bar {
+      width: 5px;
+      height: 32px;
+      background: linear-gradient(180deg, var(--gold), #D4B85A);
+      border-radius: 3px;
+    }
+
+    .profile-message {
+      font-size: 1.1rem;
+      line-height: 2.1;
+      margin-bottom: 36px;
+      color: #CBD5E0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 36px;
+    }
+
+    .stat-card {
+      background: var(--glass-bg);
+      border-radius: 16px;
+      padding: 24px 16px;
+      text-align: center;
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+      transition: transform 0.3s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .stat-card .stat-number {
+      font-size: 2.2rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--gold), #B8973D);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+    }
+
+    .stat-card .stat-label {
+      font-size: 0.82rem;
+      color: #A0AEC0;
+      margin-top: 6px;
+    }
+
+    .standfm-area {
+      background: linear-gradient(135deg, var(--navy), #243B6A);
+      border-radius: 20px;
+      padding: 32px 36px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      color: var(--white);
+      position: relative;
+      z-index: 1;
+      margin-top: 24px;
+      box-shadow: 0 8px 32px rgba(27, 42, 74, 0.15);
+    }
+
+    .standfm-mouse {
+      width: 100px;
+      flex-shrink: 0;
+      border-radius: 14px;
+    }
+
+    .standfm-text h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .standfm-text p {
+      font-family: 'Zen Maru Gothic', sans-serif;
+      font-size: 0.92rem;
+      opacity: 0.85;
+      margin-bottom: 14px;
+    }
+
+    .standfm-play-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: var(--white);
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.92rem;
+      padding: 12px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .standfm-play-btn:hover {
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .standfm-play-btn .play-icon {
+      width: 0;
+      height: 0;
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      border-left: 12px solid var(--gold);
+    }
+
+    /* ===== SECTION 6: FAQ ===== */
+    .s6-faq h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 56px;
+      text-align: center;
+    }
+
+    .faq-list {
+      max-width: 780px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .faq-item {
+      background: var(--glass-bg);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      border: 1px solid var(--glass-border);
+      transition: box-shadow 0.3s;
+    }
+
+    .faq-item:hover {
+      box-shadow: 0 6px 24px rgba(201, 168, 76, 0.1);
+    }
+
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 24px 30px;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--white);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-align: left;
+      transition: background 0.2s;
+    }
+
+    .faq-q:hover {
+      background: rgba(201, 168, 76, 0.04);
+    }
+
+    .faq-q .q-icon {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--gold), #D4B85A);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .faq-q .q-arrow {
+      margin-left: auto;
+      font-size: 1.2rem;
+      transition: transform 0.3s;
+      color: var(--gold);
+    }
+
+    .faq-q.active .q-arrow {
+      transform: rotate(180deg);
+    }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+
+    .faq-a.open {
+      max-height: 300px;
+    }
+
+    .faq-a-inner {
+      padding: 0 30px 24px 82px;
+      font-size: 0.94rem;
+      color: #CBD5E0;
+      line-height: 2;
+    }
+
+    .faq-safe {
+      margin-top: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .faq-safe .mouse-namaste {
+      width: 95px;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
+    }
+
+    .faq-safe-text {
+      font-family: 'Zen Maru Gothic', sans-serif;
+      font-size: 1.05rem;
+      color: #A0AEC0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .faq-safe-text .shield {
+      font-size: 1.5rem;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: #000;
+      color: var(--white);
+      padding: 64px 0;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--navy);
+    }
+
+    .footer-cta {
+      margin-bottom: 40px;
+    }
+
+    .footer-cta .line-premium-btn {
+      font-size: 1.05rem;
+      padding: 20px 40px;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      opacity: 0.4;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .fv-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 36px;
+      }
+
+      .fv-copy h1 {
+        font-size: 1.7rem;
+      }
+
+      .fv-copy .sub-copy {
+        font-size: 0.95rem;
+      }
+
+      .fv-image-area {
+        order: -1;
+      }
+
+      .fv-real-photo {
+        max-width: 260px;
+        margin: 0 auto;
+      }
+
+      .fv-mouse {
+        width: 80px;
+        right: 10%;
+        bottom: -5px;
+      }
+
+      .fv-mouse-speech {
+        font-size: 0.72rem;
+        bottom: 60px;
+        right: 0;
+      }
+
+      .s2-content {
+        grid-template-columns: 1fr;
+      }
+
+      .s2-mouse-area {
+        text-align: center;
+      }
+
+      .s2-mouse-img {
+        width: 110px;
+      }
+
+      .evidence-area {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-photo-area {
+        max-width: 300px;
+        margin: 0 auto;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .standfm-area {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .app-iframe-wrap iframe {
+        height: 500px;
+      }
+
+      .line-cta-area .mouse-pointing {
+        width: 90px;
+      }
+
+      .faq-safe {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .section-padding {
+        padding: 80px 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .fv-copy h1 {
+        font-size: 1.4rem;
+      }
+
+      .cta-primary {
+        font-size: 0.95rem;
+        padding: 18px 32px;
+      }
+
+      .section-padding {
+        padding: 64px 0;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .line-premium-btn {
+        font-size: 1rem;
+        padding: 18px 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Particles -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ===== SECTION 1: FIRST VIEW ===== -->
+  <section class="fv" id="top">
+    <div class="container">
+      <div class="fv-inner">
+        <div class="fv-image-area reveal-left">
+          <img src="C:\Users\naoya\Documents\Lark_手相鑑定\プロフ画像.png" alt="鑑定士プロフィール" class="fv-real-photo">
+          <div class="fv-mouse-speech">ご案内します！</div>
+          <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='140' viewBox='0 0 120 140'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%237B68AE'/%3E%3Cstop offset='100%25' stop-color='%235B4A8E'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cellipse cx='60' cy='105' rx='35' ry='30' fill='url(%23bg)'/%3E%3Ccircle cx='60' cy='55' r='30' fill='%23D0C8C0'/%3E%3Cellipse cx='38' cy='30' rx='14' ry='18' fill='%23D0C8C0' stroke='%23F0B0B8' stroke-width='2'/%3E%3Cellipse cx='38' cy='32' rx='8' ry='12' fill='%23F0B0B8'/%3E%3Cellipse cx='82' cy='30' rx='14' ry='18' fill='%23D0C8C0' stroke='%23F0B0B8' stroke-width='2'/%3E%3Cellipse cx='82' cy='32' rx='8' ry='12' fill='%23F0B0B8'/%3E%3Ccircle cx='48' cy='52' r='5' fill='%232D1B4E'/%3E%3Ccircle cx='72' cy='52' r='5' fill='%232D1B4E'/%3E%3Ccircle cx='50' cy='50' r='2' fill='white'/%3E%3Ccircle cx='74' cy='50' r='2' fill='white'/%3E%3Cellipse cx='60' cy='60' rx='3' ry='2' fill='%23F0B0B8'/%3E%3Cpath d='M54 64 Q60 70 66 64' stroke='%232D1B4E' stroke-width='1.5' fill='none'/%3E%3Cpath d='M30 45 Q60 -5 90 45' fill='url(%23bg)'/%3E%3Ccircle cx='60' cy='12' r='5' fill='%23C9A84C'/%3E%3Crect x='28' y='42' width='64' height='6' rx='3' fill='url(%23bg)' stroke='%23C9A84C' stroke-width='1'/%3E%3Ctext x='45' y='35' fill='%23C9A84C' font-size='8'%3E%E2%9C%A7%3C/text%3E%3Ctext x='65' y='28' fill='%23C9A84C' font-size='6'%3E%E2%98%85%3C/text%3E%3Ccircle cx='95' cy='85' r='8' fill='%23D0C8C0'/%3E%3Crect x='88' y='85' width='6' height='20' rx='3' fill='url(%23bg)'/%3E%3C/svg%3E"
+            alt="ねずみ鑑定士" class="fv-mouse" loading="lazy">
+        </div>
+        <div class="fv-copy">
+          <span class="fv-label">流年法 × ヨガ × 手相鑑定</span>
+          <h1>ヨガで整え、手相で<span class="gold">「時」</span>を知る。</h1>
+          <p class="sub-copy">
+            投資の勝負時も、人生の転機も。<br>
+            生命線が教える「流年法」で、<br>
+            あなたの本来の運命を<span class="gold">精密算出</span>。
+          </p>
+          <a href="#app" class="cta-primary">
+            <span class="cta-free">【 無 料 】</span>
+            あなたの転機を今すぐ算出する
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="fv-scroll-hint">
+      <span>SCROLL</span>
+      <span class="arrow"></span>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 2: PROBLEM ===== -->
+  <section class="s2-problem section-padding" id="problem">
+    <div class="container">
+      <div class="s2-header text-center reveal">
+        <h2>なぜ、今<span class="gold">「タイミング」</span>を知る<br>必要があるのか？</h2>
+        <p class="s2-sub">3つの「迷い」に心当たりはありませんか</p>
+      </div>
+      <div class="s2-content">
+        <div class="s2-mouse-area reveal-left">
+          <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='160' viewBox='0 0 140 160'%3E%3Cdefs%3E%3ClinearGradient id='bg2' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%237B68AE'/%3E%3Cstop offset='100%25' stop-color='%235B4A8E'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cellipse cx='70' cy='120' rx='38' ry='32' fill='url(%23bg2)'/%3E%3Ccircle cx='70' cy='62' r='32' fill='%23D0C8C0'/%3E%3Cellipse cx='46' cy='35' rx='14' ry='18' fill='%23D0C8C0'/%3E%3Cellipse cx='46' cy='37' rx='8' ry='12' fill='%23F0B0B8'/%3E%3Cellipse cx='94' cy='35' rx='14' ry='18' fill='%23D0C8C0'/%3E%3Cellipse cx='94' cy='37' rx='8' ry='12' fill='%23F0B0B8'/%3E%3Ccircle cx='58' cy='58' r='5' fill='%232D1B4E'/%3E%3Ccircle cx='82' cy='58' r='5' fill='%232D1B4E'/%3E%3Ccircle cx='60' cy='56' r='2' fill='white'/%3E%3Ccircle cx='84' cy='56' r='2' fill='white'/%3E%3Cellipse cx='70' cy='66' rx='3' ry='2' fill='%23F0B0B8'/%3E%3Cpath d='M64 70 Q70 76 76 70' stroke='%232D1B4E' stroke-width='1.5' fill='none'/%3E%3Cpath d='M38 52 Q70 0 102 52' fill='url(%23bg2)'/%3E%3Ccircle cx='70' cy='18' r='5' fill='%23C9A84C'/%3E%3Crect x='36' y='49' width='68' height='6' rx='3' fill='url(%23bg2)' stroke='%23C9A84C' stroke-width='1'/%3E%3Ctext x='55' y='40' fill='%23C9A84C' font-size='8'%3E%E2%9C%A7%3C/text%3E%3Ctext x='78' y='33' fill='%23C9A84C' font-size='6'%3E%E2%98%85%3C/text%3E%3Ccircle cx='110' cy='90' r='6' fill='%23D0C8C0'/%3E%3Crect x='108' y='78' width='4' height='14' rx='2' fill='%23D0C8C0'/%3E%3C/svg%3E"
+            alt="ねずみ鑑定士" class="s2-mouse-img" loading="lazy">
+          <div class="mouse-speech" style="margin-top:16px; font-size:0.88rem;">
+            がむしゃらに動くより、<br><strong>運気の波に乗る方が数倍速い</strong>ですよ！
+          </div>
+        </div>
+        <ul class="worry-list">
+          <li class="reveal" style="transition-delay:0.1s">
+            <div class="worry-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M3 17L9 11L13 15L21 7" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" />
+                <path d="M15 7H21V13" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="worry-text">
+              <h3>投資の判断に迷いがある</h3>
+              <p>エントリーも撤退も、最後は「勘」頼みになっていませんか？</p>
+            </div>
+          </li>
+          <li class="reveal" style="transition-delay:0.25s">
+            <div class="worry-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="8" r="4" stroke="#C9A84C" stroke-width="2" />
+                <path d="M6 20C6 16.6863 8.68629 14 12 14C15.3137 14 18 16.6863 18 20" stroke="#C9A84C" stroke-width="2"
+                  stroke-linecap="round" />
+                <path d="M12 14V18M10 16H14" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="worry-text">
+              <h3>ヨガで自分は見つめた。でも次の一歩が分からない</h3>
+              <p>心は整った。でも「具体的にいつ動くべきか」の地図がない。</p>
+            </div>
+          </li>
+          <li class="reveal" style="transition-delay:0.4s">
+            <div class="worry-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="9" stroke="#C9A84C" stroke-width="2" />
+                <path d="M12 7V12L15 15" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="worry-text">
+              <h3>「今の努力」がいつ報われるのか知りたい</h3>
+              <p>努力は続けている。あと必要なのは「時期」という確信だけ。</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="s2-declaration reveal">
+        それは根性論ではなく、手相の<span class="gold">「流年法」</span>という<br>
+        統計学的な<span class="gold">「運気の波」</span>を知ることで解決します。
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 3: APP ===== -->
+  <section class="s3-app section-padding" id="app">
+    <div class="container">
+      <div class="s3-header text-center reveal">
+        <h2>【精密版】人生の<span class="gold">転機予報</span></h2>
+        <p class="s3-sub">生命線の目盛り（流年）をAIが抽出し、あなたの転機を算出します</p>
+      </div>
+      <div class="app-card reveal-scale">
+        <div class="app-card-header">
+          <div class="app-icon">🔮</div>
+          <div>
+            <h3>流年法 転機算出アプリ</h3>
+            <p>左右の手のひらを撮影し、年齢を選択してください</p>
+          </div>
+        </div>
+        <div class="app-iframe-wrap">
+          <iframe src="https://harry-n2.github.io/kantei01/" title="流年法診断アプリ" loading="lazy"></iframe>
+        </div>
+      </div>
+      <div class="evidence-area">
+        <div class="evidence-card reveal" style="transition-delay:0.1s">
+          <h4>📐 流年法の論理的背景</h4>
+          <p>
+            生命線上に年齢の目盛りを刻む「流年法」は、数千年の東洋統計学に基づく技法です。
+            線の変化点と年齢の交差から、人生の転機タイミングを論理的に導出します。
+          </p>
+          <div class="evidence-img">
+            <div class="grid-overlay"></div>
+            <div class="palm-text">
+              <span class="big">🤚</span>
+              AI解析グリッド × 流年法<br>
+              統計学的アプローチで転機を可視化
+            </div>
+          </div>
+        </div>
+        <div class="evidence-card reveal" style="transition-delay:0.25s">
+          <h4>📊 なぜ投資家に選ばれるのか</h4>
+          <p>
+            感情論ではなく「数字」と「論理」。流年法は生命線の物理的特徴を計測し、
+            運気の波をグラフ化します。投資判断に必要な「タイミングの確信」を提供します。
+          </p>
+          <div style="margin-top:20px; display:flex; align-items:center; gap:16px;">
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='90' viewBox='0 0 80 90'%3E%3Cdefs%3E%3ClinearGradient id='bg3' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%237B68AE'/%3E%3Cstop offset='100%25' stop-color='%235B4A8E'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cellipse cx='40' cy='68' rx='24' ry='18' fill='url(%23bg3)'/%3E%3Ccircle cx='40' cy='38' r='20' fill='%23D0C8C0'/%3E%3Cellipse cx='28' cy='24' rx='9' ry='12' fill='%23D0C8C0'/%3E%3Cellipse cx='28' cy='25' rx='5' ry='8' fill='%23F0B0B8'/%3E%3Cellipse cx='52' cy='24' rx='9' ry='12' fill='%23D0C8C0'/%3E%3Cellipse cx='52' cy='25' rx='5' ry='8' fill='%23F0B0B8'/%3E%3Ccircle cx='34' cy='36' r='3' fill='%232D1B4E'/%3E%3Ccircle cx='46' cy='36' r='3' fill='%232D1B4E'/%3E%3Ccircle cx='35' cy='35' r='1.2' fill='white'/%3E%3Ccircle cx='47' cy='35' r='1.2' fill='white'/%3E%3Cellipse cx='40' cy='42' rx='2' ry='1.5' fill='%23F0B0B8'/%3E%3Cpath d='M22 32 Q40 2 58 32' fill='url(%23bg3)'/%3E%3Ccircle cx='40' cy='12' r='3' fill='%23C9A84C'/%3E%3Crect x='20' y='30' width='40' height='4' rx='2' fill='url(%23bg3)' stroke='%23C9A84C' stroke-width='.8'/%3E%3Ctext x='33' y='25' fill='%23C9A84C' font-size='5'%3E%E2%9C%A7%3C/text%3E%3Ccircle cx='56' cy='52' r='5' fill='%23D0C8C0'/%3E%3C/svg%3E"
+              alt="ねずみ鑑定士" width="80" loading="lazy" style="flex-shrink:0;">
+            <p class="maru" style="font-size:0.9rem; color:var(--white);">
+              「数字で語れる鑑定」だから、投資家の方にも納得いただけています。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 4: RESULT & LINE CTA ===== -->
+  <section class="s4-result section-padding" id="result">
+    <div class="container">
+      <div class="result-card reveal-scale">
+        <div class="result-card-header">
+          <span>📋</span> 解析完了 ― あなたの転機レポート
+        </div>
+        <div class="result-preview">
+          <p class="result-text">
+            解析完了。あなたの次の大きな転機は<span class="highlight">【〇〇代】</span>に訪れます。<br>
+            現在、運気は<span class="highlight">上昇気流の入り口</span>にあります。
+          </p>
+          <div class="result-blurred">
+            <div class="blur-content">
+              ▶ 具体的な転機の時期：〇歳〇月（±2ヶ月の精度）<br>
+              ▶ 投資における推奨アクション：この時期は攻めの姿勢が吉<br>
+              ▶ 仕事・キャリアの転換期：新規事業や転職に最適な波<br>
+              ▶ 健康面での注意期間：〇歳〜〇歳は休息を優先<br>
+              ▶ 人間関係のキーパーソン出現時期：〇歳前後
+            </div>
+            <div class="lock-overlay">
+              <div class="lock-icon">🔒</div>
+              <div class="lock-text">
+                具体的な「〇歳〇月」と<br>
+                投資・仕事で取るべき「具体的アクション」は<br>
+                <strong>LINE限定</strong>で公開中
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="line-cta-area reveal">
+        <img
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='140' viewBox='0 0 120 140'%3E%3Cdefs%3E%3ClinearGradient id='bg4' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%237B68AE'/%3E%3Cstop offset='100%25' stop-color='%235B4A8E'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cellipse cx='60' cy='105' rx='35' ry='28' fill='url(%23bg4)'/%3E%3Ccircle cx='60' cy='55' r='30' fill='%23D0C8C0'/%3E%3Cellipse cx='38' cy='30' rx='14' ry='18' fill='%23D0C8C0'/%3E%3Cellipse cx='38' cy='32' rx='8' ry='12' fill='%23F0B0B8'/%3E%3Cellipse cx='82' cy='30' rx='14' ry='18' fill='%23D0C8C0'/%3E%3Cellipse cx='82' cy='32' rx='8' ry='12' fill='%23F0B0B8'/%3E%3Ccircle cx='48' cy='50' r='6' fill='%232D1B4E'/%3E%3Ccircle cx='72' cy='50' r='6' fill='%232D1B4E'/%3E%3Ccircle cx='50' cy='48' r='2.5' fill='white'/%3E%3Ccircle cx='74' cy='48' r='2.5' fill='white'/%3E%3Ccircle cx='46' cy='52' r='1' fill='%23C9A84C'/%3E%3Ccircle cx='70' cy='52' r='1' fill='%23C9A84C'/%3E%3Cellipse cx='60' cy='58' rx='3' ry='2' fill='%23F0B0B8'/%3E%3Cpath d='M55 62 Q60 66 65 62' stroke='%232D1B4E' stroke-width='1.5' fill='none'/%3E%3Cpath d='M30 43 Q60 -5 90 43' fill='url(%23bg4)'/%3E%3Ccircle cx='60' cy='10' r='5' fill='%23C9A84C'/%3E%3Crect x='28' y='40' width='64' height='6' rx='3' fill='url(%23bg4)' stroke='%23C9A84C' stroke-width='1'/%3E%3Ctext x='45' y='33' fill='%23C9A84C' font-size='8'%3E%E2%9C%A7%3C/text%3E%3Ctext x='67' y='26' fill='%23C9A84C' font-size='6'%3E%E2%98%85%3C/text%3E%3Ccircle cx='100' cy='90' r='7' fill='%23D0C8C0'/%3E%3Crect x='98' y='90' width='4' height='15' rx='2' fill='url(%23bg4)'/%3E%3Ccircle cx='20' cy='90' r='7' fill='%23D0C8C0'/%3E%3Crect x='18' y='90' width='4' height='15' rx='2' fill='url(%23bg4)'/%3E%3C/svg%3E"
+          alt="ねずみ鑑定士" class="mouse-pointing" loading="lazy">
+        <div class="mouse-speech speech-bottom maru" style="margin: 0 auto 24px; text-align:center;">
+          続きはこちら！<br><strong>精密診断書</strong>をお届けします
+        </div>
+        <a href="https://lin.ee/WdYf2tq" target="_blank" rel="noopener" class="line-premium-btn">
+          <svg class="line-icon-svg" viewBox="0 0 28 28" fill="none">
+            <rect width="28" height="28" rx="6" fill="white" fill-opacity="0.2" />
+            <path
+              d="M14 5C8.477 5 4 8.58 4 12.93C4 15.57 5.67 17.9 8.27 19.27L7.27 22.5C7.2 22.73 7.47 22.93 7.67 22.8L11.37 20.5C12.23 20.67 13.1 20.77 14 20.77C19.523 20.77 24 17.19 24 12.84C24 8.58 19.523 5 14 5Z"
+              fill="white" />
+          </svg>
+          LINE登録して「精密診断書」を受け取る
+        </a>
+        <div class="premium-badge">PREMIUM ― 完全無料</div>
+        <div class="line-qr-area">
+          <p>スマートフォンの方はQRコードからも登録できます</p>
+          <img src="c:\Users\naoya\OneDrive\Pictures\LineQR_WTN.png" alt="LINE QRコード" loading="lazy"
+            onerror="this.style.display='none'">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 5: PROFILE & STANDFM ===== -->
+  <section class="s5-profile section-padding" id="profile">
+    <div class="container">
+      <div class="profile-grid">
+        <div class="profile-photo-area reveal-left">
+          <img src="C:\Users\naoya\Documents\Lark_手相鑑定\プロフ画像.png" alt="鑑定士プロフィール" class="profile-photo">
+          <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='100' viewBox='0 0 90 100'%3E%3Cdefs%3E%3ClinearGradient id='bg5' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%237B68AE'/%3E%3Cstop offset='100%25' stop-color='%235B4A8E'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cellipse cx='45' cy='75' rx='28' ry='20' fill='url(%23bg5)'/%3E%3Ccircle cx='45' cy='40' r='22' fill='%23D0C8C0'/%3E%3Cellipse cx='30' cy='22' rx='10' ry='14' fill='%23D0C8C0'/%3E%3Cellipse cx='30' cy='24' rx='6' ry='9' fill='%23F0B0B8'/%3E%3Cellipse cx='60' cy='22' rx='10' ry='14' fill='%23D0C8C0'/%3E%3Cellipse cx='60' cy='24' rx='6' ry='9' fill='%23F0B0B8'/%3E%3Ccircle cx='38' cy='38' r='3.5' fill='%232D1B4E'/%3E%3Ccircle cx='52' cy='38' r='3.5' fill='%232D1B4E'/%3E%3Ccircle cx='39' cy='37' r='1.3' fill='white'/%3E%3Ccircle cx='53' cy='37' r='1.3' fill='white'/%3E%3Cellipse cx='45' cy='44' rx='2' ry='1.5' fill='%23F0B0B8'/%3E%3Cpath d='M40 47 Q45 52 50 47' stroke='%232D1B4E' stroke-width='1.2' fill='none'/%3E%3Cpath d='M24 32 Q45 5 66 32' fill='url(%23bg5)'/%3E%3Ccircle cx='45' cy='12' r='3.5' fill='%23C9A84C'/%3E%3Crect x='22' y='30' width='46' height='4' rx='2' fill='url(%23bg5)' stroke='%23C9A84C' stroke-width='.7'/%3E%3C/svg%3E"
+            alt="ねずみ鑑定士" class="profile-mouse" loading="lazy">
+        </div>
+        <div class="profile-content reveal-right">
+          <h2><span class="gold-bar"></span>鑑定士プロフィール</h2>
+          <p class="profile-message">
+            ヨガ講師として多くの方を指導する中で、「心は整ったのに、いつ動けばいいかわからない」という声を数多くいただきました。
+            そこで出会ったのが、手相の「流年法」。<br><br>
+            手相は統計学であり、あなたの人生の設計図です。<br>
+            迷いを確信に変えるお手伝いをします。
+          </p>
+          <div class="stats-grid">
+            <div class="stat-card reveal" style="transition-delay:0.1s">
+              <span class="stat-number" data-count="500">0</span>
+              <span class="stat-label">ヨガ指導人数</span>
+            </div>
+            <div class="stat-card reveal" style="transition-delay:0.2s">
+              <span class="stat-number" data-count="200">0</span>
+              <span class="stat-label">スタエフ放送回数</span>
+            </div>
+            <div class="stat-card reveal" style="transition-delay:0.3s">
+              <span class="stat-number" data-count="0" data-text="高精度">高精度</span>
+              <span class="stat-label">転機的中率</span>
+            </div>
+          </div>
+          <div class="standfm-area reveal">
+            <img src="C:\Users\naoya\Documents\Lark_手相鑑定\スタエフ鑑定.png" alt="スタエフ鑑定" class="standfm-mouse" loading="lazy">
+            <div class="standfm-text">
+              <h4>🎧 音声でも聴けます</h4>
+              <p>文字を読むのが大変な方は、こちらで聴けます。鑑定士の理念や自己紹介をお届け。</p>
+              <a href="https://stand.fm/channels/6566be304db2e7bbf51df860" target="_blank" rel="noopener"
+                class="standfm-play-btn">
+                <span class="play-icon"></span>
+                スタエフで聴く
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 6: FAQ ===== -->
+  <section class="s6-faq section-padding" id="faq">
+    <div class="container">
+      <h2 class="reveal">鑑定メニュー・よくあるご質問</h2>
+      <div class="faq-list">
+        <div class="faq-item reveal" style="transition-delay:0.05s">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span class="q-icon">Q</span>
+            流年法とは何ですか？
+            <span class="q-arrow">▼</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              流年法は、手相の生命線上に年齢の目盛りを刻み、人生の転機・運気の波を読み取る東洋統計学の技法です。感覚ではなく、線の物理的特徴から論理的にタイミングを導き出します。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal" style="transition-delay:0.1s">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span class="q-icon">Q</span>
+            鑑定の料金はいくらですか？
+            <span class="q-arrow">▼</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              アプリでの簡易診断は無料です。LINE登録後にお届けする精密診断書も無料でお渡ししています。より詳しい個別鑑定をご希望の場合は、LINEにてメニューをご案内いたします。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal" style="transition-delay:0.15s">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span class="q-icon">Q</span>
+            投資の具体的な銘柄を教えてもらえますか？
+            <span class="q-arrow">▼</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              投資助言は行っておりません。流年法でお伝えするのは「あなた自身の運気のサイクル」です。攻めの時期・守りの時期を知ることで、ご自身の判断に確信を持っていただくことが目的です。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal" style="transition-delay:0.2s">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span class="q-icon">Q</span>
+            手相の写真だけで本当に鑑定できますか？
+            <span class="q-arrow">▼</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              はい。流年法は生命線の形状と長さを基に算出するため、鮮明な写真があれば精度の高い診断が可能です。より正確な鑑定をご希望の場合は、個別セッションもご用意しています。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal" style="transition-delay:0.25s">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span class="q-icon">Q</span>
+            勧誘されたりしませんか？
+            <span class="q-arrow">▼</span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              無理な勧誘は一切ありません。LINE登録後も不要と感じたらいつでもブロックしていただけます。あなたのペースを尊重します。
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="faq-safe reveal">
+        <img
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='100' viewBox='0 0 90 100'%3E%3Cdefs%3E%3ClinearGradient id='bg7' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%237B68AE'/%3E%3Cstop offset='100%25' stop-color='%235B4A8E'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cellipse cx='45' cy='78' rx='28' ry='18' fill='url(%23bg7)'/%3E%3Ccircle cx='45' cy='42' r='22' fill='%23D0C8C0'/%3E%3Cellipse cx='30' cy='24' rx='10' ry='14' fill='%23D0C8C0'/%3E%3Cellipse cx='30' cy='26' rx='6' ry='9' fill='%23F0B0B8'/%3E%3Cellipse cx='60' cy='24' rx='10' ry='14' fill='%23D0C8C0'/%3E%3Cellipse cx='60' cy='26' rx='6' ry='9' fill='%23F0B0B8'/%3E%3Ccircle cx='38' cy='40' r='3.5' fill='%232D1B4E'/%3E%3Ccircle cx='52' cy='40' r='3.5' fill='%232D1B4E'/%3E%3Ccircle cx='39' cy='39' r='1.3' fill='white'/%3E%3Ccircle cx='53' cy='39' r='1.3' fill='white'/%3E%3Cellipse cx='45' cy='46' rx='2' ry='1.5' fill='%23F0B0B8'/%3E%3Cpath d='M38 50 Q45 56 52 50' stroke='%232D1B4E' stroke-width='1.5' fill='none'/%3E%3Cpath d='M24 34 Q45 7 66 34' fill='url(%23bg7)'/%3E%3Ccircle cx='45' cy='14' r='3.5' fill='%23C9A84C'/%3E%3Crect x='22' y='32' width='46' height='4' rx='2' fill='url(%23bg7)' stroke='%23C9A84C' stroke-width='.7'/%3E%3Cpath d='M38 68 L45 62 L52 68' stroke='%23D0C8C0' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"
+          alt="ねずみ鑑定士（ナマステ）" class="mouse-namaste" loading="lazy">
+        <div class="faq-safe-text">
+          <span class="shield">🛡️</span>
+          無理な勧誘は一切ありません。安心してご利用ください。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-cta">
+        <a href="https://lin.ee/WdYf2tq" target="_blank" rel="noopener" class="line-premium-btn">
+          <svg class="line-icon-svg" viewBox="0 0 28 28" fill="none">
+            <rect width="28" height="28" rx="6" fill="white" fill-opacity="0.2" />
+            <path
+              d="M14 5C8.477 5 4 8.58 4 12.93C4 15.57 5.67 17.9 8.27 19.27L7.27 22.5C7.2 22.73 7.47 22.93 7.67 22.8L11.37 20.5C12.23 20.67 13.1 20.77 14 20.77C19.523 20.77 24 17.19 24 12.84C24 8.58 19.523 5 14 5Z"
+              fill="white" />
+          </svg>
+          LINE登録して精密診断書を受け取る
+        </a>
+      </div>
+      <p class="footer-copy">&copy; 2025 手相鑑定 流年法 All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ===== PARTICLES =====
+    (function () {
+      const canvas = document.getElementById('particles-canvas');
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+      function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+      window.addEventListener('resize', resize);
+      resize();
+      class Particle {
+        constructor() { this.reset(); }
+        reset() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.size = Math.random() * 2.5 + 0.5;
+          this.speedY = -Math.random() * 0.4 - 0.1;
+          this.speedX = (Math.random() - 0.5) * 0.3;
+          this.opacity = Math.random() * 0.4 + 0.1;
+          this.gold = Math.random() > 0.5;
+        }
+        update() {
+          this.y += this.speedY;
+          this.x += this.speedX;
+          this.opacity += Math.sin(Date.now() * 0.001 + this.x) * 0.003;
+          if (this.y < -10) { this.y = canvas.height + 10; this.x = Math.random() * canvas.width; }
+        }
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fillStyle = this.gold
+            ? 'rgba(201,168,76,' + Math.max(0, this.opacity) + ')'
+            : 'rgba(255,255,255,' + Math.max(0, this.opacity * 0.5) + ')';
+          ctx.fill();
+        }
+      }
+      for (let i = 0; i < 60; i++) particles.push(new Particle());
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => { p.update(); p.draw(); });
+        requestAnimationFrame(animate);
+      }
+      animate();
+    })();
+
+    // ===== SCROLL REVEAL =====
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+      revealObserver.observe(el);
+    });
+
+    // ===== COUNT UP =====
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.count);
+          if (!target) return;
+          let current = 0;
+          const increment = target / 60;
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+              el.textContent = target + '+';
+              clearInterval(timer);
+            } else {
+              el.textContent = Math.floor(current) + '+';
+            }
+          }, 25);
+          countObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-count]').forEach(el => {
+      if (parseInt(el.dataset.count) > 0) countObserver.observe(el);
+    });
+
+    // ===== FAQ =====
+    function toggleFaq(btn) {
+      const answer = btn.nextElementSibling;
+      const isOpen = answer.classList.contains('open');
+      document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+      document.querySelectorAll('.faq-q').forEach(q => q.classList.remove('active'));
+      if (!isOpen) { answer.classList.add('open'); btn.classList.add('active'); }
+    }
+  </script>
+</body>
+
+</html>
