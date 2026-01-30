@@ -1644,16 +1644,60 @@
             <p>左右の手のひらを撮影し、年齢を選択してください</p>
           </div>
         </div>
-        <div class="app-content-wrapper" style="display:flex; gap:20px; padding:20px; flex-wrap:wrap;">
-          <div class="app-iframe-wrap" style="flex:1; min-width:300px;">
-            <iframe src="https://harry-n2.github.io/kantei01/" title="流年法診断アプリ" loading="lazy"></iframe>
+        <div class="app-content-wrapper"
+          style="display:flex; gap:30px; padding:30px; flex-wrap:wrap; align-items: flex-start;">
+          <!-- Modified: Increased flex-grow and min-width for prominence -->
+          <div class="app-iframe-wrap" style="flex:2; min-width:320px; position:relative;">
+            <!-- Badge -->
+            <div class="app-badge"
+              style="position:absolute; top:-15px; left:50%; transform:translateX(-50%); background:var(--gold); color:var(--bg-dark); padding:5px 20px; border-radius:20px; font-weight:bold; font-size:0.9rem; z-index:10; box-shadow:0 4px 15px rgba(255,215,0,0.6); white-space:nowrap;">
+              ✨ 完全無料・AI精密診断中 ✨
+            </div>
+            <!-- Modified: Increased height to 650px and added pulsing glow -->
+            <iframe src="https://harry-n2.github.io/kantei01/" title="流年法診断アプリ" loading="lazy"
+              style="width:100%; height:650px; border:none; border-radius:12px; box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); animation: pulse-gold 3s infinite;"></iframe>
           </div>
+          <!-- Modified: Adjusted flex to be secondary (flex:1) -->
           <div class="app-visuals"
-            style="flex:1; min-width:250px; display:flex; flex-direction:column; gap:20px; justify-content:center;">
+            style="flex:1; min-width:250px; display:flex; flex-direction:column; gap:20px; justify-content:center; opacity:0.9;">
             <img src="assets/images/app_hand_scan.png" alt="AIスキャン"
               style="width:100%; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.5); border:1px solid var(--gold);">
+            <p style="font-size:0.9rem; color:#ccc; text-align:center;">
+              <span class="gold">●</span> 両手を撮影するだけ<br>
+              <span class="gold">●</span> AIが年齢目盛りを自動抽出
+            </p>
           </div>
         </div>
+        <style>
+          @keyframes pulse-gold {
+            0% {
+              box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+              border: 1px solid rgba(255, 215, 0, 0.3);
+            }
+
+            50% {
+              box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+              border: 1px solid rgba(255, 215, 0, 0.8);
+            }
+
+            100% {
+              box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+              border: 1px solid rgba(255, 215, 0, 0.3);
+            }
+          }
+
+          @media (max-width: 768px) {
+            .app-content-wrapper {
+              flex-direction: column;
+              padding: 15px !important;
+            }
+
+            .app-iframe-wrap iframe {
+              height: 600px !important;
+              /* Keep it tall on mobile too */
+            }
+          }
+        </style>
       </div>
       <div class="evidence-area">
         <div class="evidence-card reveal" style="transition-delay:0.1s">
