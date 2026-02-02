@@ -600,17 +600,19 @@
       position: relative;
       background: linear-gradient(135deg, #f8f4ec, #eee8d8);
       border-radius: 16px;
-      padding: 32px;
+      padding: 48px 32px;
       margin-top: 16px;
       overflow: hidden;
+      min-height: 320px;
     }
 
     .result-blurred .blur-content {
       filter: blur(6px);
       user-select: none;
       font-size: 0.95rem;
-      line-height: 2.2;
+      line-height: 2.4;
       color: var(--navy);
+      min-height: 220px;
     }
 
     .result-blurred .lock-overlay {
@@ -623,7 +625,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: rgba(252, 228, 236, 0.95);
+      padding: 30px 20px;
+      background: rgba(252, 228, 236, 0.97);
       backdrop-filter: blur(6px);
     }
 
