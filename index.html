@@ -598,36 +598,23 @@
 
     .result-blurred {
       position: relative;
-      background: linear-gradient(135deg, #f8f4ec, #eee8d8);
+      background: var(--premium-pink);
       border-radius: 16px;
-      padding: 48px 32px;
+      padding: 24px;
       margin-top: 16px;
-      overflow: hidden;
-      min-height: 320px;
     }
 
     .result-blurred .blur-content {
-      filter: blur(6px);
-      user-select: none;
-      font-size: 0.95rem;
-      line-height: 2.4;
-      color: var(--navy);
-      min-height: 220px;
+      display: none;
     }
 
     .result-blurred .lock-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 30px 20px;
-      background: rgba(252, 228, 236, 0.97);
-      backdrop-filter: blur(6px);
+      padding: 24px 16px;
     }
 
     .result-blurred .lock-icon {
