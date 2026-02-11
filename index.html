@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Shippori+Mincho:wght@500;800&family=Zen+Maru+Gothic:wght@500;700;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Shippori+Mincho:wght@500;800&family=Zen+Maru+Gothic:wght@500;700;900&family=Mochiyopop+One&display=swap"
     rel="stylesheet">
   <style>
     *,
@@ -26,15 +26,16 @@
     }
 
     :root {
-      --premium-pink: #FCE4EC;
+      --premium-pink: #FFF5F7;
+      /* Mindful Pink */
       --soft-pink: #FFF0F5;
       --white: #FFFFFF;
       --text-main: #111111;
-      /* 完全な黒に近い色で視認性確保 */
       --text-sub: #333333;
       --accent-pink: #F06292;
       --gold-border: #D4AF37;
       --chakra-gradient: linear-gradient(90deg, #FF6B6B, #FF9F43, #FECA57, #1DD1A1, #54A0FF, #5F27CD, #9980FA);
+      --section-padding: 140px 0;
     }
 
     body {
@@ -1080,6 +1081,434 @@
         padding: 18px 32px;
       }
     }
+
+    /* ===== CUSTOMER VOICE SECTION ===== */
+    .s-voice {
+      position: relative;
+      overflow: hidden;
+      background: var(--premium-pink);
+      padding: 120px 0 80px;
+    }
+
+    .voice-bg-text {
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 15rem;
+      font-weight: 900;
+      color: var(--white);
+      opacity: 0.25;
+      z-index: 0;
+      font-family: 'Shippori Mincho', serif;
+      pointer-events: none;
+    }
+
+    .voice-stats {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+      background: var(--white);
+      border-radius: 20px;
+      padding: 30px 20px;
+      box-shadow: 0 8px 30px rgba(240, 98, 146, 0.08);
+      position: relative;
+      z-index: 1;
+    }
+
+    .v-stat-item {
+      text-align: center;
+      flex: 1;
+      padding: 10px 20px;
+      position: relative;
+    }
+
+    .v-stat-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 15%;
+      height: 70%;
+      width: 1px;
+      background: rgba(240, 98, 146, 0.15);
+    }
+
+    .v-stat-num {
+      display: block;
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: var(--accent-pink);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .v-stat-label {
+      font-size: 0.85rem;
+      color: var(--text-sub);
+      font-weight: 700;
+    }
+
+    /* --- Featured Reviews (Top 6) --- */
+    .voice-featured {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 50px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .voice-featured .voice-card {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 32px 28px 24px;
+      position: relative;
+      transition: all 0.35s ease;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 24px rgba(240, 98, 146, 0.06);
+      border: 1px solid rgba(240, 98, 146, 0.08);
+      transform: none !important;
+      overflow: hidden;
+    }
+
+    .voice-featured .voice-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-pink), #FF9F43, #FECA57);
+      border-radius: 24px 24px 0 0;
+    }
+
+    .voice-featured .voice-card:nth-child(2)::before {
+      background: linear-gradient(90deg, #54A0FF, #5F27CD, #9980FA);
+    }
+
+    .voice-featured .voice-card:nth-child(3)::before {
+      background: linear-gradient(90deg, #1DD1A1, #54A0FF, #5F27CD);
+    }
+
+    .voice-featured .voice-card:nth-child(4)::before {
+      background: linear-gradient(90deg, #FECA57, #FF6B6B, var(--accent-pink));
+    }
+
+    .voice-featured .voice-card:nth-child(5)::before {
+      background: linear-gradient(90deg, #9980FA, var(--accent-pink), #FF9F43);
+    }
+
+    .voice-featured .voice-card:nth-child(6)::before {
+      background: linear-gradient(90deg, #FF6B6B, #1DD1A1, #54A0FF);
+    }
+
+    .voice-featured .voice-card:hover {
+      transform: translateY(-6px) !important;
+      box-shadow: 0 16px 40px rgba(240, 98, 146, 0.14);
+    }
+
+    /* --- Carousel Section --- */
+    .voice-carousel-section {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 40px;
+    }
+
+    .voice-carousel-label {
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-sub);
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    .voice-carousel-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .voice-carousel {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding: 20px 10px 30px;
+      scrollbar-width: none;
+      scroll-behavior: smooth;
+    }
+
+    .voice-carousel::-webkit-scrollbar {
+      display: none;
+    }
+
+    .voice-carousel .voice-card {
+      flex: 0 0 320px;
+      scroll-snap-align: start;
+      background: var(--white);
+      border-radius: 20px;
+      padding: 24px 22px 20px;
+      position: relative;
+      transition: all 0.35s ease;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 20px rgba(240, 98, 146, 0.06);
+      border: 1px solid rgba(240, 98, 146, 0.06);
+      transform: none !important;
+    }
+
+    .voice-carousel .voice-card:hover {
+      transform: translateY(-4px) !important;
+      box-shadow: 0 12px 32px rgba(240, 98, 146, 0.12);
+    }
+
+    /* Carousel Nav Arrows */
+    .voice-carousel-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 2px solid rgba(240, 98, 146, 0.15);
+      color: var(--accent-pink);
+      font-size: 1.3rem;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .voice-carousel-nav:hover {
+      background: var(--accent-pink);
+      color: var(--white);
+      border-color: var(--accent-pink);
+    }
+
+    .voice-carousel-prev { left: -10px; }
+    .voice-carousel-next { right: -10px; }
+
+    /* Carousel Dots */
+    .voice-carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    .voice-carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(240, 98, 146, 0.2);
+      cursor: pointer;
+      transition: all 0.3s;
+      border: none;
+    }
+
+    .voice-carousel-dot.active {
+      background: var(--accent-pink);
+      width: 28px;
+      border-radius: 5px;
+    }
+
+    /* --- Card Shared Styles --- */
+    .voice-stars {
+      color: #FFD700;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      letter-spacing: 3px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .voice-stars::after {
+      content: '5.0';
+      font-family: 'Zen Maru Gothic', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 900;
+      color: var(--text-sub);
+      letter-spacing: 0;
+      margin-left: 4px;
+    }
+
+    .voice-lead {
+      font-family: 'Zen Maru Gothic', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: var(--text-main);
+      display: block;
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+
+    .voice-featured .voice-lead {
+      font-size: 1.25rem;
+    }
+
+    .voice-body {
+      flex: 1;
+    }
+
+    .voice-quote {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.75;
+      font-weight: 500;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .voice-featured .voice-quote {
+      -webkit-line-clamp: 4;
+    }
+
+    .voice-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(240, 98, 146, 0.08);
+    }
+
+    .voice-avatar {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--accent-pink), #FF9F43);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+
+    .voice-card:nth-child(2n) .voice-avatar {
+      background: linear-gradient(135deg, #54A0FF, #5F27CD);
+    }
+
+    .voice-card:nth-child(3n) .voice-avatar {
+      background: linear-gradient(135deg, #1DD1A1, #54A0FF);
+    }
+
+    .voice-info {
+      font-size: 0.82rem;
+      color: var(--text-sub);
+    }
+
+    .voice-name {
+      display: block;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 1px;
+      font-size: 0.85rem;
+    }
+
+    .voice-footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .voice-tag {
+      display: inline-block;
+      background: var(--soft-pink);
+      color: var(--accent-pink);
+      padding: 3px 10px;
+      border-radius: 50px;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    /* Floating Petals */
+    .petal-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .petal {
+      position: absolute;
+      background: var(--accent-pink);
+      opacity: 0.08;
+      border-radius: 50% 0 50% 50%;
+      pointer-events: none;
+      animation: floatPetal 25s linear infinite;
+    }
+
+    @keyframes floatPetal {
+      0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+      10% { opacity: 0.08; }
+      90% { opacity: 0.08; }
+      100% { transform: translate(100px, 1000px) rotate(720deg); opacity: 0; }
+    }
+
+    /* Voice Responsive */
+    @media (max-width: 1200px) {
+      .voice-featured {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .s-voice {
+        padding: 80px 0 60px;
+      }
+
+      .voice-stats {
+        flex-direction: column;
+        gap: 0;
+        padding: 20px;
+      }
+
+      .v-stat-item {
+        padding: 12px 10px;
+      }
+
+      .v-stat-item:not(:last-child)::after {
+        width: 70%;
+        height: 1px;
+        top: auto;
+        bottom: 0;
+        right: auto;
+        left: 15%;
+      }
+
+      .v-stat-num {
+        font-size: 2.2rem;
+      }
+
+      .voice-featured {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .voice-carousel .voice-card {
+        flex: 0 0 280px;
+      }
+
+      .voice-carousel-nav {
+        display: none;
+      }
+    }
   </style>
 </head>
 
@@ -1092,23 +1521,39 @@
   <section class="fv" id="top">
     <div class="container">
       <div class="fv-inner">
-        <div class="fv-image-area">
+        <div class="fv-image-area reveal-left">
           <div class="fv-mouse-speech">ご案内します！</div>
-          <img src="assets/images/prof_lp.png" alt="鑑定士プロフィール" class="fv-real-photo" style="background: var(--premium-pink); padding: 8px;">
+          <img src="assets/images/prof_lp.png" alt="鑑定士プロフィール" class="fv-real-photo"
+            style="background: var(--premium-pink); padding: 5px;">
+          <!-- Floating decoration elements -->
+          <div
+            style="position:absolute; top:-20px; left:-20px; width:60px; height:60px; background:var(--chakra-gradient); border-radius:50%; opacity:0.1; filter:blur(10px); animation: float 6s infinite;">
+          </div>
         </div>
-        <div class="fv-copy">
-          <span class="maru"
-            style="color:var(--accent-pink); font-weight:900; font-size: 1.2rem; display: block; margin-bottom: 10px;">手相鑑定
-            × 未来の羅針盤</span>
-          <h1>あなたの<span class="gold">潜在才能</span>を<br>解き放つ手相鑑定</h1>
+        <div class="fv-copy reveal-right">
+          <div class="fv-label-wrap" style="margin-bottom: 20px;">
+            <span class="maru"
+              style="background: var(--accent-pink); color: #fff; padding: 6px 20px; border-radius: 50px; font-weight: 900; font-size: 1rem; letter-spacing: 0.1em;">手相鑑定
+              × 未来の羅針盤</span>
+          </div>
+          <h1 style="letter-spacing: -0.02em;">あなたの<span class="gold"
+              style="color:var(--accent-pink); text-decoration: underline wavy var(--chakra-orange);">潜在才能</span>を<br><span
+              style="font-size: 1.2em;">解き放つ</span>手相鑑定</h1>
           <p class="sub-copy">
             ～50代からの人生を、もっと軽やかに、もっと自分らしく～<br>
-            <span style="font-size:1.15rem; display:block; margin-top:24px; font-weight:bold;">
+            <span class="impact-text"
+              style="font-size:1.35rem; display:block; margin-top:32px; font-weight:900; line-height:1.6; color: var(--text-main);">
               手のひらに刻まれた「運気の波」を知れば、<br>
-              迷いは明快な<span style="color:var(--accent-pink);">「確信」</span>に変わります。
+              迷いは明快な<span
+                style="color:var(--accent-pink); border-bottom: 3px solid var(--chakra-yellow);">「確信」</span>に変わります。
             </span>
           </p>
-          <a href="#app" class="cta-primary">無料診断をはじめる</a>
+          <div class="fv-cta-wrap" style="margin-top: 40px;">
+            <a href="#app" class="cta-primary" style="animation: pulse-gold 3s infinite;">無料診断をはじめる <i
+                class="fas fa-chevron-right" style="margin-left:10px; font-size:0.9em;"></i></a>
+            <p style="font-size: 0.9rem; color: var(--text-sub); margin-top: 15px; font-weight: 600;">※
+              AI精密解析による最新の流年法を採用</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1153,9 +1598,10 @@
               style="position:absolute; top:-15px; left:50%; transform:translateX(-50%); background:var(--gold); color:var(--bg-dark); padding:5px 20px; border-radius:20px; font-weight:bold; font-size:0.9rem; z-index:10; box-shadow:0 4px 15px rgba(255,215,0,0.6); white-space:nowrap;">
               ✨ 完全無料・AI精密診断中 ✨
             </div>
-            <!-- Modified: Increased height to 650px and added pulsing glow -->
+            <!-- Optimized: Height maximized to 2000px to guarantee the "Retry" link is visible -->
             <iframe src="https://harry-n2.github.io/kantei01/" title="流年法診断アプリ" loading="lazy"
-              style="width:100%; height:650px; border:none; border-radius:12px; box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); animation: pulse-gold 3s infinite;"></iframe>
+              style="width:100%; height:2000px; border:none; border-radius:12px; box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); animation: pulse-gold 3s infinite; overflow:hidden;"
+              scrolling="no"></iframe>
           </div>
           <!-- Modified: Adjusted flex to be secondary (flex:1) -->
           <div class="app-visuals"
@@ -1193,8 +1639,8 @@
             }
 
             .app-iframe-wrap iframe {
-              height: 600px !important;
-              /* Keep it tall on mobile too */
+              height: 3000px !important;
+              /* Absolute maximum height for mobile to ensure NO content is ever cut off */
             }
           }
           }
@@ -1248,7 +1694,8 @@
           <div style="margin-top:20px; display:flex; flex-direction:column; gap:16px;">
             <img src="assets/images/palmistry_scroll.png" alt="古代統計学"
               style="width:100%; border-radius:14px; object-fit:cover;">
-            <div style="background:var(--accent-pink); color:#fff; padding:16px 20px; border-radius:12px; text-align:center; font-weight:700; font-size:0.95rem; line-height:1.7;">
+            <div
+              style="background:var(--accent-pink); color:#fff; padding:16px 20px; border-radius:12px; text-align:center; font-weight:700; font-size:0.95rem; line-height:1.7;">
               🤚 AI解析グリッド × 流年法<br>
               統計学的アプローチで転機を可視化
             </div>
@@ -1294,17 +1741,28 @@
               解析完了。あなたの次の大きな転機は<span class="highlight">【〇〇代】</span>に訪れます。<br>
               現在、運気は<span class="highlight">上昇気流の入り口</span>にあります。
             </p>
-            <div class="result-blurred">
-              <div class="blur-content">
-                ▶ 具体的な転機の時期：〇歳〇月（±2ヶ月の精度）<br>
-                ▶ 投資における推奨アクション：この時期は攻めの姿勢が吉<br>
-                ▶ 仕事・キャリアの転換期：新規事業や転職に最適な波<br>
-                ▶ 健康面での注意期間：〇歳〜〇歳は休息を優先<br>
-                ▶ 人間関係のキーパーソン出現時期：〇歳前後
+            <div class="result-blurred" style="transition: all 0.5s ease;">
+              <div class="blur-content" style="color: var(--text-main); font-weight: 700; line-height: 2.2;">
+                <p style="margin-bottom: 12px; border-left: 4px solid var(--accent-pink); padding-left: 15px;">▶
+                  <strong>具体的な転機の時期：</strong> 〇歳〇月（±2ヶ月の精度）
+                </p>
+                <p style="margin-bottom: 12px; border-left: 4px solid var(--accent-pink); padding-left: 15px;">▶
+                  <strong>投資における推奨アクション：</strong> この時期は攻めの姿勢が吉
+                </p>
+                <p style="margin-bottom: 12px; border-left: 4px solid var(--accent-pink); padding-left: 15px;">▶
+                  <strong>仕事・キャリアの転換期：</strong> 新規事業や転職に最適な波
+                </p>
+                <p style="margin-bottom: 12px; border-left: 4px solid var(--accent-pink); padding-left: 15px;">▶
+                  <strong>健康面での注意期間：</strong> 〇歳〜〇歳は休息を優先
+                </p>
+                <p style="margin-bottom: 12px; border-left: 4px solid var(--accent-pink); padding-left: 15px;">▶
+                  <strong>人間関係のキーパーソン出現時期：</strong> 〇歳前後
+                </p>
               </div>
               <div class="lock-overlay">
                 <div class="lock-icon">🔒</div>
-                <div class="lock-text" style="color:#000!important; font-size:1.6rem; font-weight:900; line-height:1.9;">
+                <div class="lock-text"
+                  style="color:#000!important; font-size:1.6rem; font-weight:900; line-height:1.9;">
                   具体的な「〇歳〇月」と<br>
                   投資・仕事で取るべき「具体的アクション」は<br>
                   <strong style="color:var(--accent-pink); font-size:1.9rem;">LINE限定</strong>で公開中
@@ -1314,14 +1772,16 @@
           </div>
         </div>
       </div>
-      <div class="line-cta-area reveal">
+      <div class="line-cta-area reveal"
+        style="background: var(--white); padding: 60px 40px; border-radius: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.05); border: 2px solid var(--soft-pink);">
         <img
           src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='140' viewBox='0 0 120 140'%3E%3Cdefs%3E%3ClinearGradient id='bg4' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%237B68AE'/%3E%3Cstop offset='100%25' stop-color='%235B4A8E'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cellipse cx='60' cy='105' rx='35' ry='28' fill='url(%23bg4)'/%3E%3Ccircle cx='60' cy='55' r='30' fill='%23D0C8C0'/%3E%3Cellipse cx='38' cy='30' rx='14' ry='18' fill='%23D0C8C0'/%3E%3Cellipse cx='38' cy='32' rx='8' ry='12' fill='%23F0B0B8'/%3E%3Cellipse cx='82' cy='30' rx='14' ry='18' fill='%23D0C8C0'/%3E%3Cellipse cx='82' cy='32' rx='8' ry='12' fill='%23F0B0B8'/%3E%3Ccircle cx='48' cy='50' r='6' fill='%232D1B4E'/%3E%3Ccircle cx='72' cy='50' r='6' fill='%232D1B4E'/%3E%3Ccircle cx='50' cy='48' r='2.5' fill='white'/%3E%3Ccircle cx='74' cy='48' r='2.5' fill='white'/%3E%3Ccircle cx='46' cy='52' r='1' fill='%23C9A84C'/%3E%3Ccircle cx='70' cy='52' r='1' fill='%23C9A84C'/%3E%3Cellipse cx='60' cy='58' rx='3' ry='2' fill='%23F0B0B8'/%3E%3Cpath d='M55 62 Q60 66 65 62' stroke='%232D1B4E' stroke-width='1.5' fill='none'/%3E%3Cpath d='M30 43 Q60 -5 90 43' fill='url(%23bg4)'/%3E%3Ccircle cx='60' cy='10' r='5' fill='%23C9A84C'/%3E%3Crect x='28' y='40' width='64' height='6' rx='3' fill='url(%23bg4)' stroke='%23C9A84C' stroke-width='1'/%3E%3Ctext x='45' y='33' fill='%23C9A84C' font-size='8'%3E%E2%9C%A7%3C/text%3E%3Ctext x='67' y='26' fill='%23C9A84C' font-size='6'%3E%E2%98%85%3C/text%3E%3Ccircle cx='100' cy='90' r='7' fill='%23D0C8C0'/%3E%3Crect x='98' y='90' width='4' height='15' rx='2' fill='url(%23bg4)'/%3E%3Ccircle cx='20' cy='90' r='7' fill='%23D0C8C0'/%3E%3Crect x='18' y='90' width='4' height='15' rx='2' fill='url(%23bg4)'/%3E%3C/svg%3E"
           alt="ねずみ鑑定士" class="mouse-pointing" loading="lazy">
         <div class="mouse-speech speech-bottom maru" style="margin: 0 auto 24px; text-align:center;">
           続きはこちら！<br><strong>精密診断書</strong>をお届けします
         </div>
-        <a href="https://lin.ee/WdYf2tq" target="_blank" rel="noopener" class="line-premium-btn">
+        <a href="https://lin.ee/WdYf2tq" target="_blank" rel="noopener" class="line-premium-btn"
+          style="padding: 30px 60px; font-size: 1.4rem;">
           <svg class="line-icon-svg" viewBox="0 0 28 28" fill="none">
             <rect width="28" height="28" rx="6" fill="white" fill-opacity="0.2" />
             <path
@@ -1330,56 +1790,579 @@
           </svg>
           LINE登録して「精密診断書」を受け取る
         </a>
-        <div class="premium-badge">PREMIUM ― 完全無料</div>
-        <div class="line-qr-area">
-          <p>スマートフォンの方はQRコードからも登録できます</p>
+        <div class="premium-badge" style="margin-top: 30px; transform: scale(1.2);">PREMIUM ― 完全無料</div>
+        <div class="line-qr-area" style="margin-top: 50px; background: #f9f9f9; padding: 30px; border-radius: 20px;">
+          <p style="margin-bottom: 20px; color: var(--text-main); font-size: 1.2rem;">スマートフォンの方はQRコードからも登録できます</p>
           <img src="c:\Users\naoya\OneDrive\Pictures\LineQR_WTN.png" alt="LINE QRコード" loading="lazy"
-            onerror="this.style.display='none'">
+            onerror="this.style.display='none'"
+            style="width: 200px; border: 10px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ===== SECTION 4.5: CUSTOMER VOICE ===== -->
+  <section class="s-voice" id="voice">
+    <div class="voice-bg-text">voice</div>
+    <div class="petal-container" id="petalContainer"></div>
+    <div class="container">
+      <div class="section-title reveal-scale">
+        <span class="sub-title">CUSTOMER VOICE</span>
+        <h2><span class="gold-bar"></span>喜びの声が続々と届いています</h2>
+        <p class="section-desc">無料鑑定とは思えないボリュームと的中率に、多くの驚きの声をいただいています。</p>
+      </div>
+
+      <!-- Social Proof Stats -->
+      <div class="voice-stats reveal">
+        <div class="v-stat-item">
+          <span class="v-stat-num">200+</span>
+          <span class="v-stat-label">鑑定プロジェクト実績</span>
+        </div>
+        <div class="v-stat-item">
+          <span class="v-stat-num">4.9</span>
+          <span class="v-stat-label">平均満足度</span>
+        </div>
+        <div class="v-stat-item">
+          <span class="v-stat-num">100%</span>
+          <span class="v-stat-label">丁寧な手書き対応</span>
+        </div>
+      </div>
+
+      <!-- Featured Reviews (Top 6) -->
+      <div class="voice-featured">
+        <div class="voice-card reveal">
+          <div class="voice-stars">★★★★★</div>
+          <span class="voice-lead">「無料とは思えない本格鑑定に感動」</span>
+          <div class="voice-body">
+            <p class="voice-quote">とても細かく鑑定して頂き感動しています！無料でここまで本格的にみて頂けるとは思っていませんでした。</p>
+          </div>
+          <div class="voice-header">
+            <div class="voice-avatar"><i class="fas fa-user"></i></div>
+            <div class="voice-info"><span class="voice-name">40代 女性 (兵庫県)</span></div>
+          </div>
+          <div class="voice-footer">
+            <span class="voice-tag">#感動</span>
+            <span class="voice-tag">#本格的</span>
+          </div>
+        </div>
+
+        <div class="voice-card reveal">
+          <div class="voice-stars">★★★★★</div>
+          <span class="voice-lead">「自分でも驚くほどの的中感です」</span>
+          <div class="voice-body">
+            <p class="voice-quote">自己理解はしていたので、診断内容としてはとても合っていると思ったので単純にすごいなーと思いました。「手相は変えられます」という文面を見て新たな発見にもなりました。</p>
+          </div>
+          <div class="voice-header">
+            <div class="voice-avatar"><i class="fas fa-user"></i></div>
+            <div class="voice-info"><span class="voice-name">40代 男性 (茨城県)</span></div>
+          </div>
+          <div class="voice-footer">
+            <span class="voice-tag">#自己理解</span>
+            <span class="voice-tag">#的中率</span>
+          </div>
+        </div>
+
+        <div class="voice-card reveal">
+          <div class="voice-stars">★★★★★</div>
+          <span class="voice-lead">「趣味嗜好まで的中してびっくり」</span>
+          <div class="voice-body">
+            <p class="voice-quote">どの項目も当たっていてびっくりしました！スピリチュアルが好きということまでわかるとは…と驚きです。</p>
+          </div>
+          <div class="voice-header">
+            <div class="voice-avatar"><i class="fas fa-user"></i></div>
+            <div class="voice-info"><span class="voice-name">60代 女性 (愛知県)</span></div>
+          </div>
+          <div class="voice-footer">
+            <span class="voice-tag">#的中率に感動</span>
+            <span class="voice-tag">#驚き</span>
+          </div>
+        </div>
+
+        <div class="voice-card reveal">
+          <div class="voice-stars">★★★★★</div>
+          <span class="voice-lead">「鑑定書は永久保存版です」</span>
+          <div class="voice-body">
+            <p class="voice-quote">鑑定はとても的を得ていて、正確さにビックリです！性格から体質、過去の経緯までほぼ合致。鑑定書は保存しますね。</p>
+          </div>
+          <div class="voice-header">
+            <div class="voice-avatar"><i class="fas fa-user"></i></div>
+            <div class="voice-info"><span class="voice-name">40代 男性 (千葉県)</span></div>
+          </div>
+          <div class="voice-footer">
+            <span class="voice-tag">#的確</span>
+            <span class="voice-tag">#合致</span>
+          </div>
+        </div>
+
+        <div class="voice-card reveal">
+          <div class="voice-stars">★★★★★</div>
+          <span class="voice-lead">「無料で大丈夫!?と驚く密度」</span>
+          <div class="voice-body">
+            <p class="voice-quote">「え、こんなびっしり書いてあるのに無料で大丈夫!?」とびっくり。性格面や内容も当たっていてまたびっくりしました。</p>
+          </div>
+          <div class="voice-header">
+            <div class="voice-avatar"><i class="fas fa-user"></i></div>
+            <div class="voice-info"><span class="voice-name">30代 女性 (福岡県)</span></div>
+          </div>
+          <div class="voice-footer">
+            <span class="voice-tag">#無料に驚愕</span>
+            <span class="voice-tag">#的中率</span>
+          </div>
+        </div>
+
+        <div class="voice-card reveal">
+          <div class="voice-stars">★★★★★</div>
+          <span class="voice-lead">「人生にやる気が出る文面です」</span>
+          <div class="voice-body">
+            <p class="voice-quote">一言でなく詳しく書かれていてよかったです。前向きで明るい文面なので、これからも人生にやる気が出る。</p>
+          </div>
+          <div class="voice-header">
+            <div class="voice-avatar"><i class="fas fa-user"></i></div>
+            <div class="voice-info"><span class="voice-name">40代 女性 (京都府)</span></div>
+          </div>
+          <div class="voice-footer">
+            <span class="voice-tag">#詳しい鑑定</span>
+            <span class="voice-tag">#やる気が出る</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel Section -->
+      <div class="voice-carousel-section reveal">
+        <p class="voice-carousel-label">- その他のお客様の声 -</p>
+        <div class="voice-carousel-wrapper">
+          <button class="voice-carousel-nav voice-carousel-prev" onclick="scrollVoiceCarousel(-1)" aria-label="前へ"><i class="fas fa-chevron-left"></i></button>
+          <div class="voice-carousel" id="voiceCarousel">
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「もっと自分の手相を知りたくなりました！」</span>
+              <div class="voice-body"><p class="voice-quote">とても沢山書いて頂いてて嬉しかったです。書面があると思いだ出せて嬉しいです。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">50代 女性 (京都府)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#金運</span><span class="voice-tag">#書面鑑定</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「性格はよく当たってました」</span>
+              <div class="voice-body"><p class="voice-quote">性格はよく当たってました。健康運を教えてもらえて嬉しかったです。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">40代 女性 (愛媛県)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#健康運</span><span class="voice-tag">#的中率</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「知らない自分を知れて面白い」</span>
+              <div class="voice-body"><p class="voice-quote">あまり、知らない部分の性格も知れて面白かったです。分かりやすかった。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">40代 女性 (東京都)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#性格診断</span><span class="voice-tag">#新発見</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「将来への期待が膨らみます」</span>
+              <div class="voice-body"><p class="voice-quote">ほぼ当たってるなぁと思ったので将来のことも期待しています。詳しく手書きで書かれていたのが良かったです。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">50代 女性 (滋賀県)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#将来の運勢</span><span class="voice-tag">#手書き</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「過去の時期がピッタリ！」</span>
+              <div class="voice-body"><p class="voice-quote">過去をみてみると時期が当てはまっていました。丁寧な字と文章で誠実な方かなと思いました。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">50代 女性 (滋賀県)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#過去の時期</span><span class="voice-tag">#誠実</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「珍しい線を教えてもらえて嬉しい」</span>
+              <div class="voice-body"><p class="voice-quote">分かりやすく書かれていたと思います。珍しい線を教えてもらえたら嬉しいなーと思いました。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">40代 女性 (長野県)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#金運</span><span class="voice-tag">#分かりやすい</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「その通り！と思うことばかり」</span>
+              <div class="voice-body"><p class="voice-quote">その通り！と思うところがあって興味深かったです。メッセージとかわいいイラストが嬉しかったです。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">50代 女性 (長野県)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#メッセージ</span><span class="voice-tag">#イラスト</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「ほぼ私がそこにいました」</span>
+              <div class="voice-body"><p class="voice-quote">健康面はちょっと違うかなぁと感じましたがほぼ私がそこにいました。対応が柔らかくて良かったと思います。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">50代 女性 (アメリカ)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#自分を知る</span><span class="voice-tag">#優しい対応</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「わかりやすくて読みやすかった」</span>
+              <div class="voice-body"><p class="voice-quote">わかりやすく書いてあり、読みやすかった。メッセージが付いていたので、嬉しかった。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">50代 女性 (北海道)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#読みやすい</span><span class="voice-tag">#メッセージ</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「無料なのに左右ともしっかり鑑定」</span>
+              <div class="voice-body"><p class="voice-quote">無料なのに、左右ともしっかりとみてくださってます。ひとことメッセージがかわいくてほっこりします。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">50代 女性 (石川県)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#無料鑑定</span><span class="voice-tag">#ほっこり</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「過去の悩みがピタリと符合」</span>
+              <div class="voice-body"><p class="voice-quote">小さい頃、思い悩むことが多かったのが当てはまりました。図に描いて下さるところが分かりやすいです。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">40代 女性 (茨城県)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#過去の経緯</span><span class="voice-tag">#図解</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「後で見返せる書面が素晴らしい」</span>
+              <div class="voice-body"><p class="voice-quote">思っていたよりたくさん書いていただいていて当てはまることも多く、驚きました。書面にしてあることで後から見返せるのはとても良い。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">40代 女性 (滋賀県)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#見返せる書面</span><span class="voice-tag">#驚き</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「有料ならどうなるのか楽しみ！」</span>
+              <div class="voice-body"><p class="voice-quote">ぎっしり情報が詰まっていました。無料鑑定のボリュームがありすぎて、有料ならどうなるのか楽しみです。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">50代 女性 (滋賀県)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#圧倒的ボリューム</span><span class="voice-tag">#期待感</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「あたたかみを感じる手書き鑑定」</span>
+              <div class="voice-body"><p class="voice-quote">自分の性格がとても当たっていたのでびっくりしました！手書きで結果を書いていただき、あたたかみを感じました！</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">30代 女性 (インドネシア)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#的中率</span><span class="voice-tag">#あたたかい</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「自分の強みが分かりました」</span>
+              <div class="voice-body"><p class="voice-quote">たくさん褒めていただき強みが分かり嬉しいです。めちゃくちゃ詳しく書いていただきありがたいです。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">40代 女性 (滋賀県)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#強み発見</span><span class="voice-tag">#詳しい</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「進むべき方向のヒントになりました」</span>
+              <div class="voice-body"><p class="voice-quote">確かに！とびっくりするところが多々あり改めて自分を客観視できた。これから進む方向のヒントにさせていただきます。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">40代 女性 (長野県)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#客観視</span><span class="voice-tag">#進む方向</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「左右で全く違う読み解きが面白い」</span>
+              <div class="voice-body"><p class="voice-quote">右手と左手と別々に読み解きがあった。読み解き表現がわかりやすく、私も頑張らなきゃ！と感化されました。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">50代 女性 (兵庫県)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#左右の読み解き</span><span class="voice-tag">#感化</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「自覚している特徴がそのまま出た」</span>
+              <div class="voice-body"><p class="voice-quote">書かれている言葉に自分自身心当たりはある。平均と比べてどの程度とがっている特徴なのか知りたいと思いました。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">50代 男性 (東京都)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#心当たり</span><span class="voice-tag">#特徴</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「心温まるメッセージに感謝」</span>
+              <div class="voice-body"><p class="voice-quote">ボリュームにビックリしました。性格などピッタリな所がとってもたくさんありました。心温まるメッセージもありがとうございました。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">50代 女性 (石川県)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#的中率</span><span class="voice-tag">#ボリューム</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「図面付きで場所が分かりやすい」</span>
+              <div class="voice-body"><p class="voice-quote">各項目にとても細かく書いていただき驚きです。手のイラストに色を付けて解説してあるので、どれのことかわかりやすいです。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">60代 女性 (東京都)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#細かな鑑定</span><span class="voice-tag">#分かりやすい図解</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「継続への自信に繋がりました」</span>
+              <div class="voice-body"><p class="voice-quote">ほとんど当たっていると思います。メッセージが嬉しかったです。これから継続していくことへの自信になりました。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">50代 女性 (茨城県)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#自信</span><span class="voice-tag">#的中率</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「素直に心に届く言葉でした」</span>
+              <div class="voice-body"><p class="voice-quote">無料でここまでみてもらえて、大満足だし、読み解き表現がわかりやすく、素直に心に届きました。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">40代 女性 (静岡県)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#大満足</span><span class="voice-tag">#心に届く表現</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「驚きと納得が重なる鑑定」</span>
+              <div class="voice-body"><p class="voice-quote">初めての手相鑑定でした。驚きと納得が重ね合わさった感じです。過去や性格を踏まえて今後を知りたいと思いました。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">40代 女性 (岡山県)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#驚きと納得</span><span class="voice-tag">#初めての経験</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「素敵な字とメッセージ」</span>
+              <div class="voice-body"><p class="voice-quote">字がまず綺麗で、見やすかったです！一言メッセージも嬉しかったです。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">30代 女性 (北海道)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#綺麗な字</span><span class="voice-tag">#見やすい</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「プラスの気づきが多い時間」</span>
+              <div class="voice-body"><p class="voice-quote">プラスな気づきがたくさん得られてとてもよかったです。ありがとうございました。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">30代 女性 (大阪府)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#プラスの気づき</span><span class="voice-tag">#満足</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「人の可能性に驚きました！」</span>
+              <div class="voice-body"><p class="voice-quote">手にはこんなにも人の可能性と情報が溢れているのかと驚きました！無料なのに細部まで鑑定して下さっていました。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">40代 女性 (和歌山県)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#可能性</span><span class="voice-tag">#細かな鑑定</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「今後の方向性の参考に」</span>
+              <div class="voice-body"><p class="voice-quote">こんなにわかりやすくとても細かく見てくださり、今後の方向性の参考にさせていただきます。頑張ってみたいと思います。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">40代 女性 (兵庫県)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#方向性の参考</span><span class="voice-tag">#やる気</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「新しい自分が楽しみになりました」</span>
+              <div class="voice-body"><p class="voice-quote">手相を初めて見ていただいて、こんな自分がいるんだと気づきがあった。これからも楽しみになりました。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">30代 女性 (島根県)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#自己発見</span><span class="voice-tag">#楽しみ</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「図解が勉強になり感動しました」</span>
+              <div class="voice-body"><p class="voice-quote">無料ということもあって気軽に申し込んでみたのですが、とても丁寧に見てくださっていて感動しました。図面に書かれていて勉強にもなりました！</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">50代 女性 (奈良県)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#感動</span><span class="voice-tag">#勉強になる</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「息子の授かり時期まで的中」</span>
+              <div class="voice-body"><p class="voice-quote">どれもしっくりくる内容でした。息子を授かった時期などが当たっていました。これからの励みになります。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">40代 女性 (北海道)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#的中率</span><span class="voice-tag">#励み</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「これまでの人生に納得」</span>
+              <div class="voice-body"><p class="voice-quote">綺麗な文字で分かりやすかったです。自分のやってきた事が納得できました。ありがとうございました。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">60代 女性 (東京都)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#納得</span><span class="voice-tag">#綺麗な字</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「詳しくてみやすい鑑定書」</span>
+              <div class="voice-body"><p class="voice-quote">とても詳しく書かれていて参考になりました。わかりやすく書かれていてみやすかったです。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">40代 女性 (東京都)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#詳しい</span><span class="voice-tag">#見やすい</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「言い切ってくれるから自信が持てる」</span>
+              <div class="voice-body"><p class="voice-quote">主要4線の意味がそれぞれ明瞭に記されていて嬉しかった。言い切ってくれることで、何となく自信を持てた。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">30代 女性 (福岡県)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#明瞭</span><span class="voice-tag">#自信</span></div>
+            </div>
+
+            <div class="voice-card">
+              <div class="voice-stars">★★★★★</div>
+              <span class="voice-lead">「丁寧な説明に感謝です」</span>
+              <div class="voice-body"><p class="voice-quote">丁寧なご説明でありがたかったです。見やすかったです。</p></div>
+              <div class="voice-header">
+                <div class="voice-avatar"><i class="fas fa-user"></i></div>
+                <div class="voice-info"><span class="voice-name">40代 女性 (兵庫県)</span></div>
+              </div>
+              <div class="voice-footer"><span class="voice-tag">#丁寧</span><span class="voice-tag">#見やすい</span></div>
+            </div>
+
+          </div>
+          <button class="voice-carousel-nav voice-carousel-next" onclick="scrollVoiceCarousel(1)" aria-label="次へ"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="voice-carousel-dots" id="voiceCarouselDots"></div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ===== SECTION 5: PROFILE & STANDFM ===== -->
-  <section class="s5-profile section-padding" id="profile">
+  <section class="s5-profile section-padding" id="profile"
+    style="background: var(--premium-pink); border-top: 1px solid var(--soft-pink);">
     <div class="container">
       <div class="profile-grid">
         <div class="profile-photo-area reveal-left">
-          <img src="assets/images/prof_lp.png" alt="鑑定士プロフィール" class="profile-photo" style="background: var(--premium-pink); padding: 8px;">
+          <img src="assets/images/prof_lp.png" alt="鑑定士プロフィール" class="profile-photo"
+            style="background: var(--white); padding: 10px; border: 4px solid var(--white); box-shadow: 0 20px 40px rgba(0,0,0,0.08);">
           <img
             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='100' viewBox='0 0 90 100'%3E%3Cdefs%3E%3ClinearGradient id='bg5' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%237B68AE'/%3E%3Cstop offset='100%25' stop-color='%235B4A8E'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cellipse cx='45' cy='75' rx='28' ry='20' fill='url(%23bg5)'/%3E%3Ccircle cx='45' cy='40' r='22' fill='%23D0C8C0'/%3E%3Cellipse cx='30' cy='22' rx='10' ry='14' fill='%23D0C8C0'/%3E%3Cellipse cx='30' cy='24' rx='6' ry='9' fill='%23F0B0B8'/%3E%3Cellipse cx='60' cy='22' rx='10' ry='14' fill='%23D0C8C0'/%3E%3Cellipse cx='60' cy='24' rx='6' ry='9' fill='%23F0B0B8'/%3E%3Ccircle cx='38' cy='38' r='3.5' fill='%232D1B4E'/%3E%3Ccircle cx='52' cy='38' r='3.5' fill='%232D1B4E'/%3E%3Ccircle cx='39' cy='37' r='1.3' fill='white'/%3E%3Ccircle cx='53' cy='37' r='1.3' fill='white'/%3E%3Cellipse cx='45' cy='44' rx='2' ry='1.5' fill='%23F0B0B8'/%3E%3Cpath d='M40 47 Q45 52 50 47' stroke='%232D1B4E' stroke-width='1.2' fill='none'/%3E%3Cpath d='M24 32 Q45 5 66 32' fill='url(%23bg5)'/%3E%3Ccircle cx='45' cy='12' r='3.5' fill='%23C9A84C'/%3E%3Crect x='22' y='30' width='46' height='4' rx='2' fill='url(%23bg5)' stroke='%23C9A84C' stroke-width='.7'/%3E%3C/svg%3E"
             alt="ねずみ鑑定士" class="profile-mouse" loading="lazy">
         </div>
         <div class="profile-content reveal-right">
-          <h2><span class="gold-bar"></span>鑑定士プロフィール</h2>
-          <p class="profile-message">
+          <h2 style="color: var(--text-main);"><span class="gold-bar"></span>鑑定士プロフィール</h2>
+          <p class="profile-message" style="color: var(--text-main); font-weight: 600;">
             ヨガ講師として多くの方を指導する中で、「心は整ったのに、いつ動けばいいかわからない」という声を数多くいただきました。
             そこで出会ったのが、手相の「流年法」。<br><br>
             手相は統計学であり、あなたの人生の設計図です。<br>
             迷いを確信に変えるお手伝いをします。
           </p>
           <div class="stats-grid">
-            <div class="stat-box">
-              <div class="stat-num">500+</div>
+            <div class="stat-box" style="border: 2px solid var(--accent-pink); background: var(--white);">
+              <div class="stat-num" style="color: var(--accent-pink);">500+</div>
               <div class="stat-label">ヨガ指導人数</div>
             </div>
-            <div class="stat-box">
-              <div class="stat-num">200+</div>
+            <div class="stat-box" style="border: 2px solid var(--accent-pink); background: var(--white);">
+              <div class="stat-num" style="color: var(--accent-pink);">200+</div>
               <div class="stat-label">スタエフ放送回数</div>
             </div>
-            <div class="stat-box">
-              <div class="stat-num">高精度</div>
+            <div class="stat-box" style="border: 2px solid var(--accent-pink); background: var(--white);">
+              <div class="stat-num" style="color: var(--accent-pink); font-size: 1.8rem;">高精度</div>
               <div class="stat-label">転機的中率</div>
             </div>
           </div>
           <div class="standfm-area"
-            style="margin-top: 40px; background: var(--white); border: 2px solid var(--accent-pink); border-radius: 16px; padding: 24px; display: flex; align-items: center; gap: 24px; box-shadow: 0 4px 16px rgba(240,98,146,0.1);">
-            <img src="assets/images/standfm_icon.png" alt="stand.fm" style="width: 80px; border-radius: 12px;">
+            style="margin-top: 40px; background: var(--white); border: 2px solid var(--accent-pink); border-radius: 20px; padding: 30px; display: flex; align-items: center; gap: 30px; box-shadow: 0 15px 40px rgba(240,98,146,0.1);">
+            <img src="assets/images/standfm_icon.png" alt="stand.fm"
+              style="width: 100px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
             <div class="standfm-text">
-              <h4 style="color: var(--text-main); margin-bottom: 8px; font-size: 1.1rem;">🎧 音声でも聴けます</h4>
-              <p style="color: var(--text-sub); font-size: 0.9rem; margin-bottom: 12px;">文字を読むのが大変な方は、こちらで聴けます。鑑定士の理念や自己紹介をお届け。</p>
+              <h4 style="color: var(--text-main); margin-bottom: 10px; font-size: 1.2rem; font-weight: 900;">🎧 音声でも聴けます
+              </h4>
+              <p
+                style="color: var(--text-sub); font-size: 1rem; margin-bottom: 18px; line-height: 1.6; font-weight: 600;">
+                文字を読むのが大変な方は、こちらで聴けます。鑑定士の理念や自己紹介をお届け。</p>
               <a href="https://stand.fm/channels/6566be304db2e7bbf51df860" target="_blank" rel="noopener"
-                style="display: inline-flex; align-items: center; gap: 8px; background: var(--accent-pink); padding: 8px 16px; border-radius: 30px; text-decoration: none; color: #fff;">
+                style="display: inline-flex; align-items: center; gap: 10px; background: var(--accent-pink); padding: 12px 24px; border-radius: 50px; text-decoration: none; color: #fff; font-weight: 900; box-shadow: 0 5px 15px rgba(240,98,146,0.3);">
                 <span>▶</span> スタエフで聴く
               </a>
             </div>
@@ -1392,22 +2375,27 @@
 
 
   <!-- ===== SECTION 6: FAQ ===== -->
-  <section class="s6-faq section-padding">
+  <section class="s6-faq section-padding" style="background: var(--soft-pink);">
     <div class="container">
-      <h2 class="text-center" style="margin-bottom: 60px; font-size: 2.5rem; color: var(--text-main);">鑑定メニュー・よくあるご質問</h2>
+      <h2 class="text-center"
+        style="margin-bottom: 60px; font-size: 2.5rem; color: var(--text-main); font-weight: 900;">鑑定メニュー・よくあるご質問
+      </h2>
       <div class="faq-list">
 
         <!-- Q1 -->
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
+          <button class="faq-q" onclick="toggleFaq(this)"
+            style="background: var(--white); border: 2px solid var(--accent-pink); color: var(--text-main); padding: 25px 35px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
             <span class="q-icon">
-              <span class="icon-circle">Q</span>
+              <span class="icon-circle"
+                style="background: var(--accent-pink); color: #fff; width: 45px; height: 45px; font-size: 1.4rem;">Q</span>
               流年法とは何ですか？
             </span>
-            <span style="color: #D4AF37;">▼</span>
+            <span style="color: var(--accent-pink);"><i class="fas fa-chevron-down"></i></span>
           </button>
           <div class="faq-a">
-            <div class="faq-a-inner">
+            <div class="faq-a-inner"
+              style="background: var(--white); border: 2px solid var(--soft-pink); margin-top: 10px; color: var(--text-main); font-weight: 600; font-size: 1.1rem; line-height: 1.8;">
               生命線上に年齢の目盛りを刻み、あなたの人生における転機のタイミングや運気の波を論理的に読み取る統計学的な技法です。
             </div>
           </div>
@@ -1415,15 +2403,18 @@
 
         <!-- Q2 -->
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
+          <button class="faq-q" onclick="toggleFaq(this)"
+            style="background: var(--white); border: 2px solid var(--accent-pink); color: var(--text-main); padding: 25px 35px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
             <span class="q-icon">
-              <span class="icon-circle">Q</span>
+              <span class="icon-circle"
+                style="background: var(--accent-pink); color: #fff; width: 45px; height: 45px; font-size: 1.4rem;">Q</span>
               鑑定の料金はいくらですか？
             </span>
-            <span style="color: #D4AF37;">▼</span>
+            <span style="color: var(--accent-pink);"><i class="fas fa-chevron-down"></i></span>
           </button>
           <div class="faq-a">
-            <div class="faq-a-inner">
+            <div class="faq-a-inner"
+              style="background: var(--white); border: 2px solid var(--soft-pink); margin-top: 10px; color: var(--text-main); font-weight: 600; font-size: 1.1rem; line-height: 1.8;">
               本アプリによる簡易診断は無料です。より詳細な個別鑑定をご希望の場合は、公式LINEよりご案内しております。
             </div>
           </div>
@@ -1431,15 +2422,18 @@
 
         <!-- Q3 -->
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
+          <button class="faq-q" onclick="toggleFaq(this)"
+            style="background: var(--white); border: 2px solid var(--accent-pink); color: var(--text-main); padding: 25px 35px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
             <span class="q-icon">
-              <span class="icon-circle">Q</span>
+              <span class="icon-circle"
+                style="background: var(--accent-pink); color: #fff; width: 45px; height: 45px; font-size: 1.4rem;">Q</span>
               投資の具体的な銘柄を教えてもらえますか？
             </span>
-            <span style="color: #D4AF37;">▼</span>
+            <span style="color: var(--accent-pink);"><i class="fas fa-chevron-down"></i></span>
           </button>
           <div class="faq-a">
-            <div class="faq-a-inner">
+            <div class="faq-a-inner"
+              style="background: var(--white); border: 2px solid var(--soft-pink); margin-top: 10px; color: var(--text-main); font-weight: 600; font-size: 1.1rem; line-height: 1.8;">
               当鑑定は「運気のタイミング」をお伝えするものであり、具体的な投資助言は行っておりません。投資の最終判断はご自身でお願いいたします。
             </div>
           </div>
@@ -1447,15 +2441,18 @@
 
         <!-- Q4 -->
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
+          <button class="faq-q" onclick="toggleFaq(this)"
+            style="background: var(--white); border: 2px solid var(--accent-pink); color: var(--text-main); padding: 25px 35px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
             <span class="q-icon">
-              <span class="icon-circle">Q</span>
+              <span class="icon-circle"
+                style="background: var(--accent-pink); color: #fff; width: 45px; height: 45px; font-size: 1.4rem;">Q</span>
               手相の写真だけで本当に鑑定できますか？
             </span>
-            <span style="color: #D4AF37;">▼</span>
+            <span style="color: var(--accent-pink);"><i class="fas fa-chevron-down"></i></span>
           </button>
           <div class="faq-a">
-            <div class="faq-a-inner">
+            <div class="faq-a-inner"
+              style="background: var(--white); border: 2px solid var(--soft-pink); margin-top: 10px; color: var(--text-main); font-weight: 600; font-size: 1.1rem; line-height: 1.8;">
               はい。現在のAI画像解析技術と専門家の知見を組み合わせることで、写真からでも生命線の微細な変化を高精度に読み取ることが可能です。
             </div>
           </div>
@@ -1463,15 +2460,18 @@
 
         <!-- Q5 -->
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
+          <button class="faq-q" onclick="toggleFaq(this)"
+            style="background: var(--white); border: 2px solid var(--accent-pink); color: var(--text-main); padding: 25px 35px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
             <span class="q-icon">
-              <span class="icon-circle">Q</span>
+              <span class="icon-circle"
+                style="background: var(--accent-pink); color: #fff; width: 45px; height: 45px; font-size: 1.4rem;">Q</span>
               勧誘されたりしませんか？
             </span>
-            <span style="color: #D4AF37;">▼</span>
+            <span style="color: var(--accent-pink);"><i class="fas fa-chevron-down"></i></span>
           </button>
           <div class="faq-a">
-            <div class="faq-a-inner">
+            <div class="faq-a-inner"
+              style="background: var(--white); border: 2px solid var(--soft-pink); margin-top: 10px; color: var(--text-main); font-weight: 600; font-size: 1.1rem; line-height: 1.8;">
               無理な勧誘は一切ございません。鑑定結果にご納得いただいた上で、さらに深く知りたい方のみに有料サービスをご案内しています。
             </div>
           </div>
@@ -1505,6 +2505,84 @@
       const acc = btn.nextElementSibling;
       acc.style.display = acc.style.display === "block" ? "none" : "block";
     }
+
+    // ===== VOICE CAROUSEL =====
+    (function initVoiceCarousel() {
+      const carousel = document.getElementById('voiceCarousel');
+      if (!carousel) return;
+      const cards = carousel.querySelectorAll('.voice-card');
+      const dotsContainer = document.getElementById('voiceCarouselDots');
+      const cardWidth = 340; // 320 + 20 gap
+      const visibleCards = Math.floor(carousel.offsetWidth / cardWidth) || 3;
+      const totalPages = Math.ceil(cards.length / visibleCards);
+
+      // Create dots
+      for (let i = 0; i < Math.min(totalPages, 10); i++) {
+        const dot = document.createElement('button');
+        dot.className = 'voice-carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Page ' + (i + 1));
+        dot.addEventListener('click', () => {
+          carousel.scrollTo({ left: i * visibleCards * cardWidth, behavior: 'smooth' });
+        });
+        dotsContainer.appendChild(dot);
+      }
+
+      // Update dots on scroll
+      carousel.addEventListener('scroll', () => {
+        const scrollPos = carousel.scrollLeft;
+        const currentPage = Math.round(scrollPos / (visibleCards * cardWidth));
+        dotsContainer.querySelectorAll('.voice-carousel-dot').forEach((dot, i) => {
+          dot.classList.toggle('active', i === currentPage);
+        });
+      });
+
+      // Auto-scroll
+      let autoScrollInterval = setInterval(() => {
+        if (carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth - 20) {
+          carousel.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          carousel.scrollBy({ left: cardWidth * 2, behavior: 'smooth' });
+        }
+      }, 4000);
+
+      carousel.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
+      carousel.addEventListener('mouseleave', () => {
+        autoScrollInterval = setInterval(() => {
+          if (carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth - 20) {
+            carousel.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            carousel.scrollBy({ left: cardWidth * 2, behavior: 'smooth' });
+          }
+        }, 4000);
+      });
+
+      // Touch support for mobile
+      carousel.addEventListener('touchstart', () => clearInterval(autoScrollInterval), { passive: true });
+    })();
+
+    function scrollVoiceCarousel(direction) {
+      const carousel = document.getElementById('voiceCarousel');
+      if (!carousel) return;
+      const scrollAmount = 340 * 2;
+      carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    }
+
+    // Dynamic Petal Generation
+    (function generatePetals() {
+      const container = document.getElementById('petalContainer');
+      const petalCount = 15;
+      for (let i = 0; i < petalCount; i++) {
+        const petal = document.createElement('div');
+        petal.className = 'petal';
+        petal.style.left = Math.random() * 100 + '%';
+        petal.style.top = Math.random() * 100 + '%';
+        petal.style.width = (Math.random() * 20 + 10) + 'px';
+        petal.style.height = petal.style.width;
+        petal.style.animationDelay = (Math.random() * 20) + 's';
+        petal.style.animationDuration = (Math.random() * 10 + 15) + 's';
+        container.appendChild(petal);
+      }
+    })();
 
     (function () {
       const canvas = document.getElementById('particles-canvas');
@@ -1560,6 +2638,31 @@
     document.querySelectorAll('[data-count]').forEach(el => {
       if (parseInt(el.dataset.count) > 0) countObserver.observe(el);
     });
+
+    // ===== ADMINISTRATOR MODE =====
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('mode') === 'admin') {
+        const blurredResults = document.querySelectorAll('.result-blurred');
+        blurredResults.forEach(el => {
+          const content = el.querySelector('.blur-content');
+          const lock = el.querySelector('.lock-overlay');
+          if (content) content.style.display = 'block';
+          if (lock) lock.style.display = 'none';
+          el.style.background = 'white';
+          el.style.padding = '30px';
+          el.style.border = '2px dashed var(--accent-pink)';
+        });
+
+        // Admin Mode Indicator
+        const adminIndicator = document.createElement('div');
+        adminIndicator.innerHTML = '<i class="fas fa-user-shield"></i> 管理者モード有効';
+        adminIndicator.style.cssText = 'position:fixed; bottom:20px; right:20px; background:rgba(0,0,0,0.8); color:#fff; padding:10px 20px; border-radius:50px; z-index:9999; font-size:0.8rem; font-weight:bold;';
+        document.body.appendChild(adminIndicator);
+
+        console.log('Administrator Mode Enabled: All results visible.');
+      }
+    })();
   </script>
 </body>
 
