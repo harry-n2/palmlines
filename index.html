@@ -1509,6 +1509,243 @@
         display: none;
       }
     }
+
+    /* ===== PC 2-COLUMN LAYOUT (1024px+) ===== */
+    @media (min-width: 1024px) {
+      .pc-layout {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 60% 40%;
+        gap: 40px;
+        padding: 0 28px;
+        align-items: start;
+      }
+
+      .pc-left {
+        min-width: 0;
+      }
+
+      .pc-left .fv {
+        min-height: auto;
+        padding: 80px 0 40px;
+      }
+
+      .pc-left .fv .container {
+        padding: 0;
+        max-width: 100%;
+      }
+
+      .pc-left .fv-inner {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .pc-left .fv-copy h1 {
+        font-size: 2.5rem;
+      }
+
+      .pc-left .section-padding {
+        padding: 60px 0;
+      }
+
+      .pc-left .s2-problem .container {
+        padding: 0;
+        max-width: 100%;
+      }
+
+      .pc-left .s2-problem h2 {
+        font-size: 2rem;
+      }
+
+      /* 右カラム: Sticky サイドバー */
+      .pc-right {
+        position: sticky;
+        top: 20px;
+        align-self: start;
+      }
+
+      .pc-sidebar {
+        background: var(--white);
+        border-radius: 24px;
+        padding: 32px 28px;
+        box-shadow: 0 12px 48px rgba(240, 98, 146, 0.1);
+        border: 2px solid var(--soft-pink);
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .sidebar-app-title {
+        text-align: center;
+        padding-bottom: 20px;
+        border-bottom: 2px solid var(--soft-pink);
+      }
+
+      .sidebar-icon {
+        font-size: 2.5rem;
+        margin-bottom: 12px;
+      }
+
+      .sidebar-app-title h3 {
+        font-size: clamp(1rem, 2.2vw, 1.35rem);
+        font-weight: 900;
+        color: var(--text-main);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .sidebar-app-title p {
+        font-size: 0.9rem;
+        color: var(--text-sub);
+        margin-top: 6px;
+      }
+
+      .sidebar-keyword {
+        background: linear-gradient(135deg, #FFF0F5, #FFF5F7);
+        border-radius: 16px;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .keyword-label {
+        display: block;
+        font-size: 0.75rem;
+        font-weight: 900;
+        letter-spacing: 0.15em;
+        color: var(--accent-pink);
+        margin-bottom: 8px;
+      }
+
+      .keyword-text {
+        font-size: 1.2rem;
+        font-weight: 900;
+        color: var(--text-main);
+      }
+
+      .sidebar-cta {
+        display: block;
+        background: var(--chakra-gradient);
+        color: var(--white) !important;
+        text-align: center;
+        padding: 20px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 1.15rem;
+        max-width: 400px;
+        margin: 0 auto;
+        width: 100%;
+        box-shadow: 0 10px 30px rgba(240, 98, 146, 0.4);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .sidebar-cta:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 40px rgba(240, 98, 146, 0.5);
+      }
+
+      .sidebar-line-btn {
+        display: block;
+        background: linear-gradient(135deg, #06C755, #00B900);
+        color: var(--white) !important;
+        text-align: center;
+        padding: 16px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 0.95rem;
+        max-width: 400px;
+        margin: 0 auto;
+        width: 100%;
+        box-shadow: 0 8px 24px rgba(6, 199, 85, 0.35);
+        transition: transform 0.3s;
+      }
+
+      .sidebar-line-btn:hover {
+        transform: translateY(-3px);
+      }
+
+      .sidebar-qr {
+        background: #f9f9f9;
+        border-radius: 16px;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .qr-notice {
+        font-size: 0.95rem;
+        font-weight: 800;
+        color: var(--text-main);
+        margin-bottom: 8px;
+      }
+
+      .qr-notice i {
+        color: var(--accent-pink);
+        margin-right: 6px;
+      }
+
+      .qr-desc {
+        font-size: 0.8rem;
+        color: var(--text-sub);
+        margin-bottom: 16px;
+      }
+
+      .qr-placeholder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .qr-dummy {
+        width: 140px;
+        height: 140px;
+        background: var(--white);
+        border: 3px solid var(--accent-pink);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 4rem;
+        color: var(--accent-pink);
+      }
+
+      .qr-placeholder span {
+        font-size: 0.75rem;
+        color: var(--text-sub);
+        font-weight: 600;
+      }
+
+      .cta-primary {
+        max-width: 400px;
+      }
+
+      .app-card-header h3 {
+        font-size: clamp(1rem, 1.8vw, 1.25rem);
+        white-space: nowrap;
+      }
+
+      .s3-app .container,
+      .s4-result .container,
+      .s-voice .container,
+      .s5-profile .container,
+      .s6-faq .container {
+        max-width: 1200px;
+      }
+    }
+
+    /* モバイルでは右カラムを非表示 */
+    @media (max-width: 1023px) {
+      .pc-layout {
+        display: block;
+      }
+
+      .pc-right {
+        display: none;
+      }
+    }
   </style>
 </head>
 
@@ -1516,6 +1753,10 @@
 
   <!-- Particles -->
   <canvas id="particles-canvas"></canvas>
+
+  <!-- ===== PC 2-COLUMN WRAPPER ===== -->
+  <div class="pc-layout">
+    <div class="pc-left">
 
   <!-- ===== SECTION 1: FIRST VIEW ===== -->
   <section class="fv" id="top">
@@ -1564,7 +1805,7 @@
     <div class="container" style="max-width: 800px; margin: 0 auto; text-align: center;">
       <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.12);">
         <iframe
-          src="https://www.youtube.com/embed/4XXk3-pUWlg?rel=0&modestbranding=1"
+          src="https://www.youtube.com/embed/mY-b9R8R_sM?rel=0&modestbranding=1"
           title="手相鑑定サービス紹介動画"
           style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -1588,6 +1829,51 @@
       </ul>
     </div>
   </section>
+
+    </div><!-- /.pc-left -->
+
+    <div class="pc-right">
+      <div class="pc-sidebar">
+        <!-- アプリタイトル -->
+        <div class="sidebar-app-title">
+          <div class="sidebar-icon">🔮</div>
+          <h3>流年法 転機算出アプリ</h3>
+          <p>AIが生命線から転機を算出</p>
+        </div>
+
+        <!-- TODAY'S KEYWORD -->
+        <div class="sidebar-keyword">
+          <span class="keyword-label">TODAY'S KEYWORD</span>
+          <p class="keyword-text">「運気の波」を知る</p>
+        </div>
+
+        <!-- 診断開始ボタン -->
+        <a href="#app" class="sidebar-cta">
+          無料診断をはじめる <i class="fas fa-chevron-right"></i>
+        </a>
+
+        <!-- LINE登録ボタン -->
+        <a href="https://lin.ee/WdYf2tq" target="_blank" class="sidebar-line-btn">
+          LINE登録して精密診断書を受け取る
+        </a>
+
+        <!-- PC限定: QRコード誘導 -->
+        <div class="sidebar-qr">
+          <p class="qr-notice">
+            <i class="fas fa-mobile-alt"></i>
+            PCにカメラがない方はこちら
+          </p>
+          <p class="qr-desc">スマートフォンで下のQRコードを読み取ってください</p>
+          <div class="qr-placeholder">
+            <div class="qr-dummy">
+              <i class="fas fa-qrcode"></i>
+            </div>
+            <span>palmlines.vercel.app</span>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.pc-right -->
+  </div><!-- /.pc-layout -->
 
   <!-- ===== SECTION 3: APP ===== -->
   <section class="s3-app section-padding" id="app">
