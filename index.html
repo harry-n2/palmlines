@@ -987,6 +987,9 @@
 
       .fv-image-area {
         order: -1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
       .fv-real-photo {
@@ -1001,9 +1004,30 @@
       }
 
       .fv-mouse-speech {
-        font-size: 0.72rem;
-        bottom: 60px;
-        right: 0;
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        font-size: 0.85rem;
+        padding: 10px 20px;
+        min-width: auto;
+        border-width: 2px;
+        width: fit-content;
+        margin: 0 auto 12px;
+      }
+
+      .fv-mouse-speech::after {
+        display: block;
+        position: absolute;
+        bottom: -10px;
+        top: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid var(--accent-pink);
+        border-bottom: none;
       }
 
       .s2-content {
